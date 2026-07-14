@@ -25,34 +25,6 @@ export default function Hero({ onCtaclick }: HeroProps) {
       </div>
 
       <div className="max-w-4xl w-full mx-auto text-center z-10 space-y-10 mt-16">
-        {/* Brand Logo & Tag Badge overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="flex flex-col items-center space-y-6"
-        >
-          {/* Main Overlay Logo */}
-          <div className="bg-white/5 backdrop-blur-md px-6 py-3 rounded-2xl border border-white/10 shadow-xl">
-            <img 
-              src="https://brainleadsgroup.com/assets/Logo-DwpbjegX.svg" 
-              alt="Brain Leads Group Logo" 
-              className="h-14 md:h-16 w-auto object-contain filter brightness-100 drop-shadow-[0_2px_10px_rgba(255,255,255,0.1)]"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-
-          <div className="inline-flex items-center space-x-2 bg-[#FFBF00]/15 border border-[#FFBF00]/30 px-4 py-1.5 rounded-full backdrop-blur-md">
-            <span className="flex h-2 w-2 relative">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#FFBF00] opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#FFBF00]"></span>
-            </span>
-            <span className="font-sans text-[11px] tracking-widest text-[#FFBF00] uppercase font-bold">
-              BRAINLEADS GROUP & ABIODUN BRAINARD
-            </span>
-          </div>
-        </motion.div>
-
         {/* Hero Headline Overlay */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

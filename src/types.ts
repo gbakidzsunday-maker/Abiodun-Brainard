@@ -37,7 +37,7 @@ export interface EpisodeItem {
 
 export interface ChatMessage {
   id: string;
-  sender: 'user' | 'steven';
+  sender: 'user' | 'abiodun';
   text: string;
   timestamp: string;
 }

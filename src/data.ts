@@ -129,7 +129,7 @@ export const VENTURES_DATA: VentureItem[] = [
     logo: "🎙️",
     tags: ["Media", "Podcast", "Global Tour"],
     stats: "#1 Podcast in Europe",
-    website: "https://stevenbartlett.com/podcast"
+    website: "https://brainleadsgroup.com/podcast"
   },
   {
     name: "Flight Fund",
@@ -258,7 +258,7 @@ export const EPISODES_DATA: EpisodeItem[] = [
     guest: "Simon Sinek",
     guestRole: "Leadership Expert & Author",
     summary: "In this deeply insightful episode, Simon Sinek reveals how modern corporate structures are failing human nature, how to cultivate genuine empathy, and how to deal with the quiet epidemic of toxic bosses and workplace anxiety.",
-    playbackUrl: "https://stevenbartlett.com/podcast"
+    playbackUrl: "https://brainleadsgroup.com/podcast"
   },
   {
     id: "doac-2",
@@ -267,7 +267,7 @@ export const EPISODES_DATA: EpisodeItem[] = [
     guest: "Sir Richard Branson",
     guestRole: "Founder of Virgin Group",
     summary: "Abiodun sits down with legendary founder Sir Richard Branson in the Caribbean to discuss dyslexic advantages, building a brand on audacious stunts, overcoming near-death experiences, and what truly matters at the end of a long life.",
-    playbackUrl: "https://stevenbartlett.com/podcast"
+    playbackUrl: "https://brainleadsgroup.com/podcast"
   },
   {
     id: "doac-3",
@@ -276,7 +276,7 @@ export const EPISODES_DATA: EpisodeItem[] = [
     guest: "Mo Gawdat",
     guestRole: "Former Chief Business Officer of Google [X]",
     summary: "Mo Gawdat returns to share his revolutionary 'happiness algorithm' following personal tragedy, explaining how to control your thoughts, conquer anxiety, and thrive in an age of accelerating artificial intelligence.",
-    playbackUrl: "https://stevenbartlett.com/podcast"
+    playbackUrl: "https://brainleadsgroup.com/podcast"
   },
   {
     id: "doac-4",
@@ -285,7 +285,7 @@ export const EPISODES_DATA: EpisodeItem[] = [
     guest: "Dr. Tara Swart",
     guestRole: "Neuroscientist & Psychiatrist",
     summary: "Dr. Tara Swart breaks down the hard science behind manifestation, neuroplasticity, how stress destroys decision-making, and what foods and sleep habits can physically reverse brain aging.",
-    playbackUrl: "https://stevenbartlett.com/podcast"
+    playbackUrl: "https://brainleadsgroup.com/podcast"
   }
 ];
 
