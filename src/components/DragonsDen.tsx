@@ -5,7 +5,7 @@ export default function DragonsDen() {
   return (
     <section id="dragons-den" className="bg-[#090D16] border-y border-zinc-800/80 py-10 relative overflow-hidden px-6">
       {/* Subtle gold glow behind */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[80px] bg-[#FFBF00]/5 rounded-full blur-[60px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[80px] bg-[#B48C35]/5 rounded-full blur-[60px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto z-10 relative flex flex-col items-center">
         {/* "AS SEEN ON" Label */}

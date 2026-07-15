@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { ArrowDown, MessageSquare, Play } from "lucide-react";
+import { ArrowDown, BookOpen, Target, Users, Play, ArrowRight } from "lucide-react";
 import heroBgImg from "../assets/images/nigerian_hero_1784038962505.jpg";
 
 interface HeroProps {
@@ -10,7 +10,7 @@ export default function Hero({ onCtaclick }: HeroProps) {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden px-6 py-24"
+      className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden px-6 py-28 sm:py-32 lg:py-24"
     >
       {/* Background Image filling and fitting the first section */}
       <div className="absolute inset-0 z-0">
@@ -21,64 +21,148 @@ export default function Hero({ onCtaclick }: HeroProps) {
           referrerPolicy="no-referrer"
         />
         {/* Deep, highly polished dark glass overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/70 to-zinc-950/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/85 to-zinc-950/95" />
       </div>
 
-      <div className="max-w-4xl w-full mx-auto text-center z-10 space-y-10 mt-16">
-        {/* Hero Headline Overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          className="space-y-6"
-        >
-          <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black tracking-tight text-white leading-tight uppercase">
-            BUILDING POWERFUL <br />
-            <span className="relative inline-block my-2 px-4 py-1">
-              <span className="text-black relative z-10 font-black">BRAND</span>
-              <span className="absolute -inset-1.5 border-4 border-[#FFBF00] rounded-2xl bg-[#FFBF00] shadow-md -rotate-1" />
-            </span> <br />
-            SYSTEMS
-          </h1>
-        </motion.div>
+      <div className="w-full max-w-7xl mx-auto z-10 mt-12 md:mt-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          {/* ================= LEFT COLUMN: HERO WRITE-UP ================= */}
+          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+            
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.1 }}
+              className="space-y-3"
+            >
+              <span className="font-sans text-xs sm:text-sm tracking-[0.3em] text-white/90 uppercase font-extrabold block">
+                WELCOME TO
+              </span>
+              <h1 className="font-sans text-4xl sm:text-5xl md:text-6xl font-black text-[#B48C35] tracking-tight uppercase leading-tight">
+                BRAINLEADS ACADEMY
+              </h1>
+            </motion.div>
 
-        {/* Hero Paragraph Overlay */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-sans text-zinc-300 text-base md:text-lg max-w-2xl mx-auto font-normal leading-relaxed"
-        >
-          Through <span className="text-white font-semibold">Brainleads Group</span>, we scale world-class holding brands like Brainleads Academy, Flyrinzo, and Sierce Air. Guided by Abiodun Brainard's professional philosophy that "Sales is Teaching", we empower entrepreneurs, simplify marketing through AI, and build solutions that make a lasting impact.
-        </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-4"
+            >
+              <h2 className="font-sans text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-snug">
+                Learn. Grow. Lead. Build a Business That Lasts.
+              </h2>
+              <p className="font-sans text-zinc-300 text-xs sm:text-sm md:text-base max-w-2xl font-normal leading-relaxed">
+                Brainleads Academy is a business education platform dedicated to equipping entrepreneurs, professionals, and future business leaders with practical knowledge, strategies, and the right mindset to create opportunities, lead with confidence, and achieve lasting success.
+              </p>
+            </motion.div>
 
-        {/* Hero CTAs Overlay */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4"
-        >
-          <button
-            id="hero-contact-btn"
-            onClick={() => onCtaclick("contact")}
-            className="w-full sm:w-auto flex items-center justify-center space-x-3 bg-[#FFBF00] text-black font-sans font-bold tracking-wider text-xs uppercase py-4 px-8 rounded-full shadow-lg shadow-[#FFBF00]/20 hover:bg-white hover:text-black hover:shadow-white/10 transition-all duration-300 hover:scale-105 active:scale-95"
-          >
-            <MessageSquare className="w-4 h-4" />
-            <span>Partner With Us</span>
-          </button>
+            {/* Badges/Labels Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.25 }}
+              className="flex flex-wrap items-center gap-x-1 gap-y-3 pt-2 text-zinc-300"
+            >
+              <div className="flex items-center space-x-2">
+                <BookOpen className="w-4 h-4 text-[#B48C35] shrink-0" />
+                <span className="font-sans text-2xs sm:text-xs font-bold tracking-wider uppercase">
+                  Practical Education
+                </span>
+              </div>
+              
+              <div className="h-4 w-[1px] bg-zinc-700/60 mx-3 hidden sm:block" />
+              
+              <div className="flex items-center space-x-2">
+                <Target className="w-4 h-4 text-[#B48C35] shrink-0" />
+                <span className="font-sans text-2xs sm:text-xs font-bold tracking-wider uppercase">
+                  Real World Strategies
+                </span>
+              </div>
+              
+              <div className="h-4 w-[1px] bg-zinc-700/60 mx-3 hidden sm:block" />
+              
+              <div className="flex items-center space-x-2">
+                <Users className="w-4 h-4 text-[#B48C35] shrink-0" />
+                <span className="font-sans text-2xs sm:text-xs font-bold tracking-wider uppercase">
+                  Lasting Impact
+                </span>
+              </div>
+            </motion.div>
 
-          <button
-            id="hero-explore-btn"
-            onClick={() => onCtaclick("about")}
-            className="w-full sm:w-auto flex items-center justify-center space-x-3 border-2 border-white/20 hover:border-white text-white font-sans font-bold tracking-wider text-xs uppercase py-4 px-8 rounded-full bg-white/5 backdrop-blur-md transition-all duration-300 hover:scale-105 active:scale-95"
-          >
-            <Play className="w-4 h-4 text-[#FFBF00] fill-[#FFBF00]" />
-            <span>Explore Our Story</span>
-          </button>
-        </motion.div>
+            {/* Hero CTAs */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="flex flex-col sm:flex-row items-center gap-4 pt-4"
+            >
+              <button
+                id="hero-start-learning-btn"
+                onClick={() => onCtaclick("about")}
+                className="group w-full sm:w-auto flex items-center justify-center space-x-2.5 bg-[#B48C35] text-white font-sans font-bold tracking-widest text-2xs sm:text-xs uppercase py-3.5 px-7 rounded shadow-md hover:bg-[#967128] transition-all duration-300"
+              >
+                <span>START LEARNING</span>
+                <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
+              </button>
 
+              <button
+                id="hero-watch-tv-btn"
+                onClick={() => onCtaclick("ventures")}
+                className="group w-full sm:w-auto flex items-center justify-center space-x-2.5 border border-[#B48C35] text-white font-sans font-bold tracking-widest text-2xs sm:text-xs uppercase py-3.5 px-7 rounded bg-[#B48C35]/5 hover:bg-[#B48C35]/15 transition-all duration-300"
+              >
+                <span>WATCH BRAINLEADS TV</span>
+                <div className="w-4 h-4 rounded-full border border-[#B48C35] flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform shrink-0">
+                  <Play className="w-1.5 h-1.5 text-[#B48C35] fill-[#B48C35] ml-[1px]" />
+                </div>
+              </button>
+            </motion.div>
 
+          </div>
+
+          {/* ================= RIGHT COLUMN: GOLD CREST & INSPIRED QUOTE ================= */}
+          <div className="lg:col-span-5 flex flex-col items-center justify-center text-center lg:border-l lg:border-zinc-800/60 lg:pl-10 space-y-6">
+            
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="relative max-w-xs flex items-center justify-center group hover:scale-[1.03] transition-transform duration-300"
+            >
+              <img 
+                src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36.jpg" 
+                alt="Brain Leads Group Logo" 
+                className="h-24 md:h-28 lg:h-32 w-auto object-contain rounded-2xl"
+                referrerPolicy="no-referrer"
+              />
+            </motion.div>
+
+            {/* Inspiration Quote */}
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.35 }}
+              className="flex flex-col items-center max-w-sm space-y-2 px-4"
+            >
+              {/* Gold Quote Mark */}
+              <span className="font-serif text-4xl leading-none text-[#B48C35] font-bold select-none h-4">
+                “
+              </span>
+              
+              <p className="font-sans text-white text-sm sm:text-base font-normal tracking-wide leading-relaxed">
+                Knowledge creates opportunities, Action creates results.
+              </p>
+              
+              {/* Gold Handwriting/Signature Sign */}
+              <span className="font-signature text-3xl sm:text-4xl text-[#B48C35] tracking-wide mt-2 block">
+                Abiodun Brainard
+              </span>
+            </motion.div>
+
+          </div>
+
+        </div>
       </div>
 
       {/* Floating Scroll Indicator */}
@@ -87,10 +171,10 @@ export default function Hero({ onCtaclick }: HeroProps) {
         animate={{ y: [0, 8, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
         onClick={() => onCtaclick("about")}
-        className="absolute bottom-6 flex flex-col items-center text-zinc-500 hover:text-[#FFBF00] transition-colors z-10"
+        className="absolute bottom-6 flex flex-col items-center text-zinc-500 hover:text-[#B48C35] transition-colors z-10"
       >
         <span className="font-sans text-[9px] tracking-widest uppercase mb-1">Scroll</span>
-        <ArrowDown className="w-4 h-4 text-[#FFBF00]" />
+        <ArrowDown className="w-4 h-4 text-[#B48C35]" />
       </motion.button>
     </section>
   );

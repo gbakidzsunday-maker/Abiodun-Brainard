@@ -55,20 +55,32 @@ const LEARN_DATA: LearnItem[] = [
   }
 ];
 
-export default function Ventures() {
+interface VenturesProps {
+  onNavClick: (sectionId: string) => void;
+}
+
+export default function Ventures({ onNavClick }: VenturesProps) {
+  const handleCardClick = (id: string) => {
+    if (id === "books" || id === "tv") {
+      onNavClick("books");
+    } else {
+      onNavClick("contact");
+    }
+  };
+
   return (
     <section id="ventures" className="py-24 bg-white border-t border-zinc-200 relative px-6 overflow-hidden">
       {/* Decorative background elements */}
-      <div className="absolute top-1/4 left-10 w-[300px] h-[300px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-10 w-[300px] h-[300px] bg-[#B48C35]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-10 right-10 w-[300px] h-[300px] bg-zinc-100 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center space-y-4 mb-16">
-          <span className="font-mono text-xs text-[#FFBF00] uppercase tracking-widest font-bold">EDUCATIONAL INITIATIVES</span>
+          <span className="font-mono text-xs text-[#B48C35] uppercase tracking-widest font-bold">EDUCATIONAL INITIATIVES</span>
           <h2 className="font-sans text-3xl md:text-4xl font-black text-zinc-950 tracking-tight uppercase">
             LEARN WITH BRAINLEADS
           </h2>
-          <div className="w-16 h-1 bg-[#FFBF00] mx-auto mt-4 rounded-full" />
+          <div className="w-16 h-1 bg-[#B48C35] mx-auto mt-4 rounded-full" />
         </div>
 
         {/* Learning Cards Grid */}
@@ -83,11 +95,11 @@ export default function Ventures() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-white border border-zinc-200/80 hover:border-[#FFBF00]/60 hover:shadow-xl rounded-2xl p-6 flex flex-col justify-between items-center text-center group transition-all duration-300 relative"
+                className="bg-white border border-zinc-200/80 hover:border-[#B48C35]/60 hover:shadow-xl rounded-2xl p-6 flex flex-col justify-between items-center text-center group transition-all duration-300 relative"
               >
                 <div className="flex flex-col items-center w-full">
                   {/* Rounded Gold/Beige Icon Container */}
-                  <div className="w-16 h-16 rounded-full bg-[#FFBF00]/10 border border-[#FFBF00]/20 flex items-center justify-center mb-6 text-[#A37000] group-hover:bg-[#FFBF00]/20 transition-colors duration-300">
+                  <div className="w-16 h-16 rounded-full bg-[#B48C35]/10 border border-[#B48C35]/20 flex items-center justify-center mb-6 text-[#967128] group-hover:bg-[#B48C35]/20 transition-colors duration-300">
                     <IconComponent className="w-7 h-7 stroke-[1.75]" />
                   </div>
 
@@ -105,7 +117,8 @@ export default function Ventures() {
                 {/* Card Button */}
                 <button
                   id={`learn-btn-${item.id}`}
-                  className="w-full py-2.5 px-4 font-sans text-xs font-bold tracking-wider uppercase text-white bg-[#B48C35] hover:bg-[#967128] rounded-lg transition-all duration-300 mt-auto shadow-sm hover:shadow"
+                  onClick={() => handleCardClick(item.id)}
+                  className="w-full py-2.5 px-4 font-sans text-xs font-bold tracking-wider uppercase text-white bg-[#B48C35] hover:bg-[#967128] rounded-lg transition-all duration-300 mt-auto shadow-sm hover:shadow cursor-pointer"
                 >
                   {item.buttonText}
                 </button>

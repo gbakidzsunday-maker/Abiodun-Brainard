@@ -43,23 +43,16 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-24 bg-[#F9FAFB] border-t border-zinc-200 relative px-6 overflow-hidden">
       {/* Decorative gradients */}
-      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#FFBF00]/5 rounded-full blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[350px] h-[350px] bg-[#B48C35]/3 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto z-10 relative pt-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
           
           {/* Left panel: Info */}
           <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#FFBF00]/10 border border-[#FFBF00]/25 px-3.5 py-1.5 rounded-full">
-              <Sparkles className="w-4 h-4 text-[#FFBF00]" />
-              <span className="font-mono text-[10px] tracking-widest text-zinc-950 uppercase font-bold">
-                BOOK SPEAKING & PRESS
-              </span>
-            </div>
-
             <h2 className="font-sans text-4xl md:text-5xl font-black text-zinc-900 tracking-tight uppercase leading-none">
               Let's Create <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 to-[#FFBF00]">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 to-[#B48C35]">
                 An Impact
               </span>
             </h2>
@@ -71,11 +64,11 @@ export default function ContactForm() {
             {/* Quick contact list */}
             <div className="space-y-4 pt-6">
               <div className="flex items-center space-x-3 text-zinc-700">
-                <Mail className="w-4.5 h-4.5 text-[#FFBF00]" />
+                <Mail className="w-4.5 h-4.5 text-[#B48C35]" />
                 <span className="font-mono text-xs md:text-sm font-semibold">press@brainleadsgroup.com</span>
               </div>
               <div className="flex items-center space-x-3 text-zinc-700">
-                <Phone className="w-4.5 h-4.5 text-[#FFBF00]" />
+                <Phone className="w-4.5 h-4.5 text-[#B48C35]" />
                 <span className="font-mono text-xs md:text-sm font-semibold">London Offices: +44 20 7946 0192</span>
               </div>
             </div>
@@ -107,7 +100,7 @@ export default function ContactForm() {
                           value={formData.name}
                           onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="Your Name"
-                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#FFBF00] transition-colors"
+                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors"
                         />
                         {errors.name && (
                           <p id="error-name" className="text-red-500 text-2xs font-sans">{errors.name}</p>
@@ -125,7 +118,7 @@ export default function ContactForm() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="you@example.com"
-                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#FFBF00] transition-colors"
+                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors"
                         />
                         {errors.email && (
                           <p id="error-email" className="text-red-500 text-2xs font-sans">{errors.email}</p>
@@ -145,7 +138,7 @@ export default function ContactForm() {
                           value={formData.company}
                           onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                           placeholder="E.g., Flight Story"
-                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#FFBF00] transition-colors"
+                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors"
                         />
                       </div>
 
@@ -158,7 +151,7 @@ export default function ContactForm() {
                           id="form-topic-select"
                           value={formData.topic}
                           onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
-                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#FFBF00] transition-colors cursor-pointer appearance-none"
+                          className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors cursor-pointer appearance-none"
                         >
                           <option value="Speaking Event">Keynote / Speaking Event</option>
                           <option value="Investment / VC">Flight Fund / Investment Pitch</option>
@@ -179,7 +172,7 @@ export default function ContactForm() {
                         value={formData.eventDetails}
                         onChange={(e) => setFormData({ ...formData, eventDetails: e.target.value })}
                         placeholder="Provide details about dates, budget range, and visual requirements..."
-                        className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#FFBF00] transition-colors resize-none"
+                        className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors resize-none"
                       />
                       {errors.eventDetails && (
                         <p id="error-details" className="text-red-500 text-2xs font-sans">{errors.eventDetails}</p>
@@ -190,7 +183,7 @@ export default function ContactForm() {
                       id="form-submit-btn"
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full flex items-center justify-center space-x-2 bg-[#FFBF00] hover:bg-[#FFBF00]/90 text-black font-sans font-bold text-xs tracking-wider uppercase py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition-all"
+                      className="w-full flex items-center justify-center space-x-2 bg-[#B48C35] hover:bg-[#B48C35]/90 text-white font-sans font-bold text-xs tracking-wider uppercase py-4 px-6 rounded-xl shadow-md hover:shadow-lg transition-all"
                     >
                       {isSubmitting ? (
                         <span className="font-sans animate-pulse">Securing Booking Connection...</span>
@@ -210,8 +203,8 @@ export default function ContactForm() {
                     animate={{ opacity: 1, scale: 1 }}
                     className="text-center py-10 space-y-6 flex flex-col items-center"
                   >
-                    <div className="w-16 h-16 rounded-full bg-[#FFBF00]/10 border border-[#FFBF00]/25 flex items-center justify-center">
-                      <CheckCircle className="w-8 h-8 text-[#FFBF00]" />
+                    <div className="w-16 h-16 rounded-full bg-[#B48C35]/10 border border-[#B48C35]/25 flex items-center justify-center">
+                      <CheckCircle className="w-8 h-8 text-[#B48C35]" />
                     </div>
                     <div className="space-y-2">
                       <h3 className="font-sans text-2xl font-extrabold text-zinc-900 uppercase tracking-tight">
@@ -228,7 +221,7 @@ export default function ContactForm() {
                         setIsSubmitted(false);
                         setFormData({ name: "", email: "", company: "", eventDetails: "", topic: "Speaking Event" });
                       }}
-                      className="flex items-center space-x-1 text-xs text-[#FFBF00] font-sans uppercase font-bold tracking-wider hover:text-zinc-950 transition-colors"
+                      className="flex items-center space-x-1 text-xs text-[#B48C35] font-sans uppercase font-bold tracking-wider hover:text-zinc-950 transition-colors"
                     >
                       <span>Submit another proposal</span>
                       <ArrowRight className="w-3.5 h-3.5" />

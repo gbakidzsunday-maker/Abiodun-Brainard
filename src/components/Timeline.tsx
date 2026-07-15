@@ -25,7 +25,7 @@ export default function Timeline() {
       subtitle: "Childhood Roots & Inspiration",
       content: "Growing up, my parents owned a small business. My mother managed the sales, while my father spent his days out in the streets marketing the business and finding customers. As a child, I watched them work tirelessly every day. They weren't running a large company, but they were building something with determination, resilience, and hope.",
       image: abiodun1,
-      icon: <BookOpen className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <BookOpen className="w-5 h-5 text-[#B48C35]" />,
     },
     {
       stage: "Stage 2",
@@ -33,7 +33,7 @@ export default function Timeline() {
       subtitle: "Seeing the Reality of Growth",
       content: "I saw the early mornings. I saw the long days. I saw the sacrifices. I also saw the challenges that came with trying to grow a business. Although they worked incredibly hard, watching their daily struggle and resilience carved a deep mark on me.",
       image: abiodun1, // Reuse or alternate
-      icon: <Shield className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <Shield className="w-5 h-5 text-[#B48C35]" />,
     },
     {
       stage: "Stage 3",
@@ -41,7 +41,7 @@ export default function Timeline() {
       subtitle: "The Burning Spark of Passion",
       content: "I often found myself asking a simple question: 'Is there a better way?' What if they had access to more practical business knowledge? What if they understood modern sales strategies, marketing, branding, customer experience, and business growth? Could they have reached more customers? Could they have grown faster? Those questions stayed with me and became the foundation of my passion for business.",
       image: abiodun2,
-      icon: <Compass className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <Compass className="w-5 h-5 text-[#B48C35]" />,
     },
     {
       stage: "Stage 4",
@@ -49,7 +49,7 @@ export default function Timeline() {
       subtitle: "A Mindset Shift That Changed Everything",
       content: "I dedicated myself to learning everything I could about sales, marketing, entrepreneurship, leadership, and business growth—not simply to build businesses, but to help others avoid unnecessary struggles by sharing practical knowledge. Along the way, I discovered something that completely changed the way I think about business: Sales isn't about convincing people. Sales is teaching. When people truly understand the value of what you offer, they naturally make better decisions.",
       image: abiodun3,
-      icon: <Lightbulb className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <Lightbulb className="w-5 h-5 text-[#B48C35]" />,
     },
     {
       stage: "Stage 5",
@@ -57,7 +57,7 @@ export default function Timeline() {
       subtitle: "Opportunities, Solutions, Impact",
       content: "That philosophy became the foundation of everything we build today. It inspired the creation of Brainleads Group—a company built on the belief that businesses should create opportunities, solve real problems, and improve people's lives. Today, Brainleads Group continues to grow through businesses sharing one common purpose.",
       image: abiodun3, // Alternate
-      icon: <Award className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <Award className="w-5 h-5 text-[#B48C35]" />,
     },
     {
       stage: "Stage 6",
@@ -65,15 +65,15 @@ export default function Timeline() {
       subtitle: "Our Holding Companies & Dynamic Mission",
       content: "Our goal is simple: to help people become better entrepreneurs, stronger leaders, more confident professionals, and lifelong learners. Through Brainleads Academy (practical business education), Flyrinzo (simplifying marketing via AI), and Sierce Air (ambient scent marketing), we are making a lasting impact. If one book inspires someone to start a business, if one conversation gives someone courage, or if one lesson helps a business grow... then our mission is being fulfilled. This is only the beginning.",
       image: abiodun4,
-      icon: <Heart className="w-5 h-5 text-[#FFBF00]" />,
+      icon: <Heart className="w-5 h-5 text-[#B48C35]" />,
     }
   ];
 
   return (
     <section id="about" className="py-24 bg-white border-t border-zinc-200 relative px-6 overflow-hidden">
       {/* Subtle decorative background gradients */}
-      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/4 left-0 w-[400px] h-[400px] bg-[#B48C35]/3 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-[#B48C35]/3 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-6xl mx-auto z-10 relative">
         
@@ -90,7 +90,7 @@ export default function Timeline() {
               "Every entrepreneur has a story.<br />
               This is mine."
             </p>
-            <div className="w-16 h-1 bg-[#FFBF00] mx-auto mt-6 rounded-full" />
+            <div className="w-16 h-1 bg-[#B48C35] mx-auto mt-6 rounded-full" />
           </div>
         </div>
 
@@ -118,8 +118,8 @@ export default function Timeline() {
 
                   {/* Centered timeline badge / circle */}
                   <div className="absolute left-4 md:left-1/2 md:-translate-x-1/2 top-6 md:top-8 z-10">
-                    <div className="w-8 h-8 rounded-full bg-white border-2 border-[#FFBF00] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
-                      <div className="w-3.5 h-3.5 rounded-full bg-[#FFBF00]" />
+                    <div className="w-8 h-8 rounded-full bg-white border-2 border-[#B48C35] flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-3.5 h-3.5 rounded-full bg-[#B48C35]" />
                     </div>
                   </div>
 
@@ -130,7 +130,7 @@ export default function Timeline() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true, margin: "-100px" }}
                       transition={{ duration: 0.6, delay: 0.1 }}
-                      className="bg-zinc-50 rounded-3xl border border-zinc-200 overflow-hidden shadow-lg hover:shadow-xl hover:border-[#FFBF00]/50 transition-all duration-300 group"
+                      className="bg-zinc-50 rounded-3xl border border-zinc-200 overflow-hidden shadow-lg hover:shadow-xl hover:border-[#B48C35]/50 transition-all duration-300 group"
                     >
                       {/* Grid containing Portrait and Details */}
                       <div className="grid grid-cols-1 sm:grid-cols-12">
@@ -147,7 +147,7 @@ export default function Timeline() {
                           
                           {/* Floating stage tag on image */}
                           <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20">
-                            <span className="font-mono text-[9px] font-black uppercase tracking-widest text-[#FFBF00]">
+                            <span className="font-mono text-[9px] font-black uppercase tracking-widest text-[#B48C35]">
                               {item.stage}
                             </span>
                           </div>
@@ -192,7 +192,7 @@ export default function Timeline() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mt-24 bg-[#FFBF00]/5 border-2 border-dashed border-[#FFBF00]/30 rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto"
+          className="mt-24 bg-[#B48C35]/5 border-2 border-dashed border-[#B48C35]/30 rounded-3xl p-8 md:p-12 text-center max-w-3xl mx-auto"
         >
           <h3 className="font-sans text-xl md:text-2xl font-black text-zinc-900 uppercase tracking-tight mb-4">
             The Shared Purpose of Brainleads Group

@@ -43,9 +43,9 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
           className="flex items-center focus:outline-none transition-transform duration-300 hover:scale-[1.03]"
         >
           <img 
-            src="https://brainleadsgroup.com/assets/Logo-DwpbjegX.svg" 
+            src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36.jpg" 
             alt="Brain Leads Group Logo" 
-            className="h-14 md:h-18 lg:h-20 w-auto object-contain filter drop-shadow-[0_2px_12px_rgba(0,0,0,0.06)]"
+            className="h-28 md:h-32 lg:h-40 w-auto object-contain rounded-2xl"
             referrerPolicy="no-referrer"
           />
         </button>
@@ -68,7 +68,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#FFBF00]"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-[#B48C35]"
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -79,7 +79,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
           <button
             id="book-speaking-btn"
             onClick={() => onNavClick("contact")}
-            className="flex items-center space-x-2 bg-[#FFBF00] hover:bg-[#FFBF00]/80 text-black font-sans font-medium text-xs tracking-wider uppercase py-2.5 px-5 rounded-full transition-all hover:scale-105 active:scale-95 shadow-sm"
+            className="flex items-center space-x-2 bg-[#B48C35] hover:bg-[#B48C35]/90 text-white font-sans font-medium text-xs tracking-wider uppercase py-2.5 px-5 rounded-full transition-all hover:scale-105 active:scale-95 shadow-sm"
           >
             <span>Book Speaking</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -117,7 +117,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                   }}
                   className={`font-sans text-lg tracking-wider uppercase text-left py-2 ${
                     activeSection === item.id
-                      ? "text-[#FFBF00] font-semibold"
+                      ? "text-[#B48C35] font-semibold"
                       : "text-zinc-600 hover:text-zinc-900"
                   }`}
                 >
@@ -130,7 +130,7 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                   onNavClick("contact");
                   setIsOpen(false);
                 }}
-                className="w-full flex items-center justify-center space-x-2 bg-[#FFBF00] text-black font-sans font-medium text-sm tracking-wider uppercase py-3 px-6 rounded-full"
+                className="w-full flex items-center justify-center space-x-2 bg-[#B48C35] text-white font-sans font-medium text-sm tracking-wider uppercase py-3 px-6 rounded-full"
               >
                 <span>Book Speaking</span>
                 <ArrowRight className="w-4 h-4" />

@@ -30,16 +30,16 @@ export default function LawsShowcase() {
   return (
     <section id="books" className="py-20 bg-[#FDFCFA] border-t border-zinc-200 relative px-6 overflow-hidden">
       {/* Background radial elements for luxury editorial feel */}
-      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#B48C35]/3 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-zinc-100 rounded-full blur-[100px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
           {/* ================= LEFT PAIR: FEATURED BOOK ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center">
             {/* Text details column */}
-            <div className="md:col-span-7 space-y-6 flex flex-col justify-between h-full">
+            <div className="xl:col-span-7 space-y-6 flex flex-col justify-between h-full">
               <div className="space-y-4">
                 <span className="font-sans text-xs tracking-widest text-[#B48C35] uppercase font-bold block">
                   FEATURED BOOK
@@ -70,7 +70,7 @@ export default function LawsShowcase() {
             </div>
 
             {/* Book Cover image column */}
-            <div className="md:col-span-5 flex justify-center md:justify-end">
+            <div className="xl:col-span-5 flex justify-center xl:justify-end">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
@@ -93,9 +93,9 @@ export default function LawsShowcase() {
           </div>
 
           {/* ================= RIGHT PAIR: FEATURED EPISODE ================= */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t lg:border-t-0 lg:border-l border-zinc-200 pt-12 lg:pt-0 lg:pl-16">
+          <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center border-t lg:border-t-0 lg:border-l border-zinc-200 pt-12 lg:pt-0 lg:pl-16">
             {/* Text details column */}
-            <div className="md:col-span-7 space-y-6 flex flex-col justify-between h-full">
+            <div className="xl:col-span-7 space-y-6 flex flex-col justify-between h-full">
               <div className="space-y-4">
                 <span className="font-sans text-xs tracking-widest text-[#B48C35] uppercase font-bold block">
                   FEATURED EPISODE
@@ -126,7 +126,7 @@ export default function LawsShowcase() {
             </div>
 
             {/* Video Thumbnail column */}
-            <div className="md:col-span-5 flex justify-center md:justify-end">
+            <div className="xl:col-span-5 flex justify-center xl:justify-end">
               <motion.div
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
@@ -177,7 +177,7 @@ export default function LawsShowcase() {
               <div className="bg-zinc-950 text-white p-8 flex flex-col justify-between items-center md:w-5/12 text-center relative overflow-hidden">
                 <div className="absolute inset-0 bg-[#B48C35]/10 pointer-events-none" />
                 <div className="z-10 space-y-4">
-                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#FFBF00] font-bold">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#B48C35] font-bold">
                     Now Available
                   </span>
                   <h3 className="font-sans text-xl font-extrabold leading-tight">
@@ -360,7 +360,7 @@ export default function LawsShowcase() {
                       onClick={() => setIsMuted(!isMuted)}
                       className="text-zinc-300 hover:text-white transition-colors"
                     >
-                      {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5 text-[#FFBF00]" />}
+                      {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5 text-[#B48C35]" />}
                     </button>
                   </div>
                 </div>
@@ -368,7 +368,7 @@ export default function LawsShowcase() {
                 {/* Big Center State Indicator if paused */}
                 {!isVideoPlaying && (
                   <div className="z-10 bg-black/50 p-5 rounded-full border border-white/10 cursor-pointer hover:scale-105 transition-transform" onClick={() => setIsVideoPlaying(true)}>
-                    <Play className="w-8 h-8 text-[#FFBF00] fill-current ml-1" />
+                    <Play className="w-8 h-8 text-[#B48C35] fill-current ml-1" />
                   </div>
                 )}
               </div>
@@ -377,7 +377,7 @@ export default function LawsShowcase() {
               <div className="md:w-4/12 p-6 flex flex-col justify-between bg-zinc-950 text-left border-t md:border-t-0 md:border-l border-zinc-800">
                 <div className="space-y-6">
                   <div>
-                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#FFBF00] font-bold block mb-2">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#B48C35] font-bold block mb-2">
                       EPISODE SHOWNOTES
                     </span>
                     <h4 className="font-sans text-lg font-black tracking-tight uppercase leading-snug">
