@@ -91,100 +91,102 @@ export default function Footer({ onNavClick }: FooterProps) {
   return (
     <footer className="w-full">
       {/* ================= TOP BRANDING BAND ================= */}
-      <div className="bg-[#FDFCFA] border-t border-zinc-200 py-16 px-6 sm:px-8 lg:px-12 relative overflow-hidden">
+      <div className="bg-[#FDFCFA] border-t border-zinc-200 py-12 sm:py-16 px-4 sm:px-8 lg:px-12 relative overflow-hidden">
         {/* Background ambient lighting */}
         <div className="absolute top-1/2 left-1/3 -translate-y-1/2 w-[350px] h-[350px] bg-[#B48C35]/3 rounded-full blur-[100px] pointer-events-none" />
         
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
+          <div className="grid grid-cols-3 gap-3 sm:gap-6 md:gap-8 items-stretch">
             
             {/* COLUMN 1: STAY CONNECTED */}
-            <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
-              <div className="space-y-3.5">
-                <h4 className="font-sans text-xs font-black tracking-widest text-[#B48C35] uppercase">
+            <div className="flex flex-col justify-between space-y-4 sm:space-y-6">
+              <div className="space-y-2 sm:space-y-3.5">
+                <h4 className="font-sans text-[9px] sm:text-xs font-black tracking-widest text-[#B48C35] uppercase">
                   STAY CONNECTED
                 </h4>
-                <p className="font-sans text-zinc-600 text-xs md:text-[13px] leading-relaxed max-w-sm">
-                  Get practical business insights, new episodes, book updates, event invitations and exclusive resources delivered to your inbox.
+                <p className="font-sans text-zinc-600 text-[10px] sm:text-xs md:text-[13px] leading-relaxed max-w-sm">
+                  Get practical business insights, book updates, and exclusive resources.
                 </p>
               </div>
 
               <div className="w-full max-w-sm">
                 {!subscribed ? (
-                  <form onSubmit={handleSubscribe} className="flex items-center w-full">
+                  <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-stretch sm:items-center w-full gap-1.5 sm:gap-0">
                     <input
                       type="email"
                       required
-                      placeholder="Enter your email address"
+                      placeholder="Email"
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      className="flex-1 bg-zinc-50 border border-zinc-200 focus:border-[#B48C35]/60 focus:bg-white text-zinc-800 text-xs px-4 py-3 rounded-l-lg outline-none transition-all placeholder:text-zinc-400"
+                      className="flex-1 bg-zinc-50 border border-zinc-200 focus:border-[#B48C35]/60 focus:bg-white text-zinc-800 text-[10px] sm:text-xs px-2.5 sm:px-4 py-2 sm:py-3 rounded-md sm:rounded-none sm:rounded-l-lg outline-none transition-all placeholder:text-zinc-400"
                     />
                     <button
                       type="submit"
-                      className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-2xs font-bold tracking-widest uppercase px-6 py-3 rounded-r-lg transition-all shadow-sm flex items-center shrink-0"
+                      className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-[8px] sm:text-2xs font-bold tracking-widest uppercase px-3 sm:px-6 py-2 sm:py-3 rounded-md sm:rounded-none sm:rounded-r-lg transition-all shadow-sm flex items-center justify-center shrink-0"
                     >
                       SUBSCRIBE
                     </button>
                   </form>
                 ) : (
-                  <div className="flex items-center space-x-2.5 bg-emerald-50 border border-emerald-100 rounded-lg p-3 text-emerald-800 text-xs">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Thank you for subscribing! Check your inbox.</span>
+                  <div className="flex items-center space-x-1.5 bg-emerald-50 border border-emerald-100 rounded-lg p-2 text-emerald-800 text-[9px] sm:text-xs">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-emerald-600 shrink-0" />
+                    <span>Subscribed successfully!</span>
                   </div>
                 )}
               </div>
             </div>
 
             {/* COLUMN 2: FOLLOW BRAINLEADS ACADEMY */}
-            <div className="lg:col-span-4 lg:border-l lg:border-zinc-200/80 lg:px-10 flex flex-col justify-between space-y-6">
-              <div className="space-y-3.5">
-                <h4 className="font-sans text-xs font-black tracking-widest text-[#B48C35] uppercase">
-                  FOLLOW BRAINLEADS ACADEMY
+            <div className="border-l border-zinc-200/80 pl-3 sm:pl-6 md:pl-10 flex flex-col justify-between space-y-4 sm:space-y-6">
+              <div className="space-y-2 sm:space-y-3.5">
+                <h4 className="font-sans text-[9px] sm:text-xs font-black tracking-widest text-[#B48C35] uppercase">
+                  FOLLOW BRAINLEADS
                 </h4>
-                <p className="font-sans text-zinc-600 text-xs md:text-[13px] leading-relaxed max-w-sm">
-                  Follow us for weekly insights, practical strategies, and inspiring business conversations.
+                <p className="font-sans text-zinc-600 text-[10px] sm:text-xs md:text-[13px] leading-relaxed max-w-sm">
+                  Follow us for weekly insights and business growth conversations.
                 </p>
               </div>
 
               {/* Social Icons row */}
-              <div className="flex flex-wrap gap-2.5 pt-2">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2.5 pt-1 sm:pt-2">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-8 h-8 rounded-full bg-zinc-950 hover:bg-[#B48C35] text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm"
+                    className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-zinc-950 hover:bg-[#B48C35] text-white flex items-center justify-center transition-all duration-300 hover:scale-105 shadow-sm"
                     title={social.name}
                   >
-                    {social.icon}
+                    <span className="scale-[0.65] sm:scale-100 flex items-center justify-center">
+                      {social.icon}
+                    </span>
                   </a>
                 ))}
               </div>
             </div>
 
             {/* COLUMN 3: LOGO EMBLEM */}
-            <div className="lg:col-span-4 lg:border-l lg:border-zinc-200/80 lg:pl-10 flex flex-col items-center justify-center text-center">
+            <div className="border-l border-zinc-200/80 pl-3 sm:pl-6 md:pl-10 flex flex-col items-center justify-center text-center">
               {/* Logo Image */}
-              <div className="relative group mb-4">
+              <div className="relative group mb-2 sm:mb-4">
                 <img 
                   src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36.jpg" 
                   alt="Brain Leads Group Logo" 
-                  className="h-20 w-auto object-contain rounded-xl"
+                  className="h-10 sm:h-20 w-auto object-contain rounded-lg sm:rounded-xl"
                   referrerPolicy="no-referrer"
                 />
               </div>
 
-              <div className="space-y-1">
-                <h5 className="font-sans text-base font-black tracking-[0.25em] text-zinc-900 uppercase">
+              <div className="space-y-0.5 sm:space-y-1">
+                <h5 className="font-sans text-[9px] sm:text-base font-black tracking-[0.15em] sm:tracking-[0.25em] text-zinc-900 uppercase">
                   BRAINLEADS
                 </h5>
-                <p className="font-sans text-xs font-light tracking-[0.4em] text-zinc-700 uppercase">
+                <p className="font-sans text-[7px] sm:text-xs font-light tracking-[0.2em] sm:tracking-[0.4em] text-zinc-700 uppercase">
                   ACADEMY
                 </p>
-                <div className="w-8 h-[1px] bg-[#B48C35]/40 mx-auto my-2" />
-                <p className="font-sans text-[9px] font-bold tracking-widest text-zinc-400 uppercase">
+                <div className="w-6 sm:w-8 h-[1px] bg-[#B48C35]/40 mx-auto my-1 sm:my-2" />
+                <p className="font-sans text-[6px] sm:text-[9px] font-bold tracking-wider sm:tracking-widest text-zinc-400 uppercase">
                   A BRAINLEADS GROUP COMPANY
                 </p>
               </div>
@@ -195,69 +197,69 @@ export default function Footer({ onNavClick }: FooterProps) {
       </div>
 
       {/* ================= BOTTOM METRICS/LINKS BAND ================= */}
-      <div className="bg-[#090D16] border-t border-zinc-800/60 py-6 px-6 sm:px-8 lg:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div className="bg-[#090D16] border-t border-zinc-800/60 py-6 px-4 sm:px-8 lg:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-6">
           
           {/* Quick Links Column */}
-          <div className="flex flex-wrap items-center justify-center md:justify-start gap-x-6 gap-y-3">
-            <span className="font-sans text-xs font-black tracking-wider text-white uppercase">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-3 sm:gap-x-6 gap-y-2">
+            <span className="font-sans text-[10px] sm:text-xs font-black tracking-wider text-white uppercase">
               Quick Links
             </span>
             <div className="w-[1px] h-3 bg-zinc-800 hidden sm:block" />
             
             <button 
               onClick={() => onNavClick("about")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               About
             </button>
             <button 
               onClick={() => onNavClick("about")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               My Journey
             </button>
             <button 
               onClick={() => onNavClick("books")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Books
             </button>
             <button 
               onClick={() => onNavClick("ventures")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Brainleads TV
             </button>
             <button 
               onClick={() => onNavClick("ventures")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Events
             </button>
             <button 
               onClick={() => onNavClick("ventures")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Articles
             </button>
             <button 
               onClick={() => onNavClick("contact")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Work With Abiodun
             </button>
             <button 
               onClick={() => onNavClick("contact")} 
-              className="font-sans text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
+              className="font-sans text-[10px] sm:text-[11px] font-bold text-zinc-400 hover:text-[#B48C35] uppercase transition-colors"
             >
               Contact
             </button>
           </div>
 
           {/* Inspirational Motto Quote */}
-          <div className="text-center md:text-right shrink-0">
-            <span className="font-serif italic text-xs tracking-wide text-[#B48C35]">
+          <div className="text-center sm:text-right shrink-0">
+            <span className="font-serif italic text-[10px] sm:text-xs tracking-wide text-[#B48C35]">
               Knowledge creates opportunities. Action creates results.
             </span>
           </div>
