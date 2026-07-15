@@ -78,38 +78,7 @@ export default function Hero({ onCtaclick }: HeroProps) {
           </button>
         </motion.div>
 
-        {/* Centered Numbers / Stats Bar */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 0.4 }}
-          className="grid grid-cols-3 gap-4 md:gap-8 pt-10 border-t border-white/10 max-w-3xl mx-auto"
-        >
-          <div className="text-center">
-            <p className="font-sans text-xl md:text-3xl font-black text-white">
-              $600M+
-            </p>
-            <p className="font-sans text-[10px] md:text-xs text-zinc-400 uppercase tracking-widest mt-1">
-              Agency Value
-            </p>
-          </div>
-          <div className="text-center border-x border-white/10 px-4">
-            <p className="font-sans text-xl md:text-3xl font-black text-[#FFBF00]">
-              15M+
-            </p>
-            <p className="font-sans text-[10px] md:text-xs text-zinc-400 uppercase tracking-widest mt-1">
-              Podcast Downloads
-            </p>
-          </div>
-          <div className="text-center">
-            <p className="font-sans text-xl md:text-3xl font-black text-white">
-              28Y
-            </p>
-            <p className="font-sans text-[10px] md:text-xs text-zinc-400 uppercase tracking-widest mt-1">
-              Youngest Dragon
-            </p>
-          </div>
-        </motion.div>
+
       </div>
 
       {/* Floating Scroll Indicator */}

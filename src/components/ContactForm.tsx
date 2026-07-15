@@ -162,7 +162,7 @@ export default function ContactForm() {
                         >
                           <option value="Speaking Event">Keynote / Speaking Event</option>
                           <option value="Investment / VC">Flight Fund / Investment Pitch</option>
-                          <option value="DOAC Guest">The Diary of a CEO Guest Recommendation</option>
+                          <option value="Media Inquiry">Podcast / Media Inquiry</option>
                           <option value="Press Interview">Press & media relations</option>
                         </select>
                       </div>

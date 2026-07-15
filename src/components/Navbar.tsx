@@ -21,10 +21,9 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
 
   const navItems = [
     { id: "about", label: "Story" },
-    { id: "podcast", label: "Podcast" },
-    { id: "ventures", label: "Ventures" },
-    { id: "books", label: "The 33 Laws" },
-    { id: "dragons-den", label: "Dragon's Den" },
+    { id: "ventures", label: "Learn" },
+    { id: "books", label: "Featured" },
+    { id: "dragons-den", label: "Media" },
   ];
 
   return (

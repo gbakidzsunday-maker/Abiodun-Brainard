@@ -1,202 +1,442 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { LAWS_DATA } from "../data";
-import { Sparkles, ArrowRight, RefreshCw, Layers, CheckCircle2 } from "lucide-react";
+import { Play, X, Check, Mail, Sparkles, Download, Volume2, VolumeX, BookOpen, ArrowRight } from "lucide-react";
 
 export default function LawsShowcase() {
-  const [selectedCategory, setSelectedCategory] = useState<'all' | 'The Self' | 'The Story' | 'The Team' | 'The Business'>('all');
-  const [activeLawIndex, setActiveLawIndex] = useState(0);
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [isBookModalOpen, setIsBookModalOpen] = useState(false);
+  const [isEpisodeModalOpen, setIsEpisodeModalOpen] = useState(false);
+  const [emailSubmitted, setEmailSubmitted] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
+  const [isMuted, setIsMuted] = useState(true);
+  
+  // Book Form State
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    org: "",
+    interest: "hardcopy"
+  });
 
-  const filteredLaws = selectedCategory === 'all'
-    ? LAWS_DATA
-    : LAWS_DATA.filter(law => law.category === selectedCategory);
-
-  const activeLaw = filteredLaws[activeLawIndex % filteredLaws.length] || LAWS_DATA[0];
-
-  const handleNext = () => {
-    setIsFlipped(false);
+  const handleBookSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setEmailSubmitted(true);
     setTimeout(() => {
-      setActiveLawIndex((prev) => (prev + 1) % filteredLaws.length);
-    }, 200);
+      setEmailSubmitted(false);
+      setIsBookModalOpen(false);
+      setFormData({ name: "", email: "", org: "", interest: "hardcopy" });
+    }, 2500);
   };
-
-  const drawRandomLaw = () => {
-    setIsFlipped(false);
-    setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * filteredLaws.length);
-      setActiveLawIndex(randomIndex);
-    }, 200);
-  };
-
-  const getCategoryColor = (category: string) => {
-    switch (category) {
-      case "The Self": return "text-amber-700 border-amber-500/20 bg-amber-500/10";
-      case "The Story": return "text-blue-700 border-blue-500/20 bg-blue-500/10";
-      case "The Team": return "text-purple-700 border-purple-500/20 bg-purple-500/10";
-      case "The Business": return "text-green-700 border-green-500/20 bg-green-500/10";
-      default: return "text-zinc-900 border-zinc-200 bg-zinc-100";
-    }
-  };
-
-  const categories = ['all', 'The Self', 'The Story', 'The Team', 'The Business'];
 
   return (
-    <section id="books" className="py-24 bg-white border-t border-zinc-200 relative px-6 overflow-hidden">
-      {/* Decorative gradients */}
-      <div className="absolute top-1/4 left-10 w-[300px] h-[300px] bg-[#FFBF00]/5 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/4 right-10 w-[300px] h-[300px] bg-[#FFBF00]/10 rounded-full blur-[100px] pointer-events-none" />
+    <section id="books" className="py-20 bg-[#FDFCFA] border-t border-zinc-200 relative px-6 overflow-hidden">
+      {/* Background radial elements for luxury editorial feel */}
+      <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-zinc-100 rounded-full blur-[100px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto z-10 relative">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
           
-          {/* Left: Book Branding & Intro */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-amber-100 border border-amber-200 px-3.5 py-1.5 rounded-full">
-              <Sparkles className="w-4 h-4 text-amber-750" />
-              <span className="font-mono text-[10px] tracking-widest text-amber-750 uppercase font-bold">
-                SUNDAY TIMES BESTSELLER
-              </span>
+          {/* ================= LEFT PAIR: FEATURED BOOK ================= */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+            {/* Text details column */}
+            <div className="md:col-span-7 space-y-6 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <span className="font-sans text-xs tracking-widest text-[#B48C35] uppercase font-bold block">
+                  FEATURED BOOK
+                </span>
+                
+                <h2 className="font-sans text-3xl md:text-4.5xl font-black text-zinc-900 tracking-tight leading-tight uppercase">
+                  Sales Is Teaching
+                </h2>
+                
+                <p className="font-sans text-zinc-900 text-sm md:text-base font-semibold leading-relaxed">
+                  The Mindset, Principles & Strategies That Turn Conversations Into Results.
+                </p>
+                
+                <p className="font-sans text-zinc-600 text-xs md:text-sm leading-relaxed font-normal">
+                  A practical guide to help you build trust, create value and close more business by teaching instead of convincing.
+                </p>
+              </div>
+
+              <div className="pt-4">
+                <button
+                  id="get-copy-btn"
+                  onClick={() => setIsBookModalOpen(true)}
+                  className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-xs font-bold tracking-widest uppercase py-3.5 px-8 rounded shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  GET YOUR COPY
+                </button>
+              </div>
             </div>
 
-            <h2 className="font-sans text-4xl md:text-5xl font-black text-zinc-900 tracking-tight uppercase leading-none">
-              The 33 Laws of <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFBF00] to-zinc-900">
-                Business & Life
-              </span>
-            </h2>
-
-            <p className="font-sans text-zinc-600 text-sm md:text-base font-light leading-relaxed">
-              Based on interviews with world-class performers and direct learnings building business empires. These aren't temporary strategies—they are permanent truths that govern our psychology, biology, story, team, and commercial success.
-            </p>
-
-            <div className="border-t border-zinc-200 pt-6 mt-4">
-              <span className="font-sans text-xs text-zinc-500 uppercase tracking-widest block mb-4 font-bold">
-                Explore Laws by Category:
-              </span>
-              <div className="flex flex-wrap gap-2">
-                {categories.map((cat) => (
-                  <button
-                    id={`law-cat-btn-${cat.replace(" ", "-")}`}
-                    key={cat}
-                    onClick={() => {
-                      setSelectedCategory(cat as any);
-                      setActiveLawIndex(0);
-                      setIsFlipped(false);
-                    }}
-                    className={`font-sans text-2xs uppercase tracking-wider px-3.5 py-2 rounded-full border transition-all ${
-                      selectedCategory === cat
-                        ? "bg-[#FFBF00] text-black border-[#FFBF00] font-bold shadow-sm"
-                        : "bg-zinc-100 text-zinc-600 border-zinc-200 hover:bg-zinc-200 hover:text-zinc-950"
-                    }`}
-                  >
-                    {cat === 'all' ? 'All' : cat}
-                  </button>
-                ))}
-              </div>
+            {/* Book Cover image column */}
+            <div className="md:col-span-5 flex justify-center md:justify-end">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setIsBookModalOpen(true)}
+                className="cursor-pointer relative drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] group"
+              >
+                <img
+                  src="/src/assets/images/sales_book_mockup_1784079126778.jpg"
+                  alt="Sales Is Teaching Book Cover Mockup"
+                  referrerPolicy="no-referrer"
+                  className="w-48 md:w-56 rounded-r-lg object-cover border-l-4 border-black/40"
+                />
+                <div className="absolute inset-0 bg-black/10 opacity-0 group-hover:opacity-100 rounded-r-lg transition-opacity duration-300 flex items-center justify-center">
+                  <span className="bg-white/90 text-zinc-900 font-sans text-2xs font-bold tracking-wider uppercase px-3 py-1.5 rounded shadow">
+                    PREVIEW CHAPTERS
+                  </span>
+                </div>
+              </motion.div>
             </div>
           </div>
 
-          {/* Right: Beautiful Interactive Card Deck */}
-          <div className="lg:col-span-7 flex flex-col items-center">
-            <div className="w-full max-w-lg relative min-h-[460px] flex flex-col justify-between">
-              
-              {/* Active Card Body */}
-              <AnimatePresence mode="wait">
-                <motion.div
-                  id={`law-card-${activeLaw.number}`}
-                  key={activeLaw.number + "-" + isFlipped}
-                  initial={{ opacity: 0, rotateY: isFlipped ? 90 : -90, scale: 0.95 }}
-                  animate={{ opacity: 1, rotateY: 0, scale: 1 }}
-                  exit={{ opacity: 0, rotateY: isFlipped ? -90 : 90, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
-                  onClick={() => setIsFlipped(!isFlipped)}
-                  className={`w-full bg-[#F9FAFB] border border-zinc-200 rounded-3xl p-8 md:p-10 cursor-pointer shadow-lg relative select-none flex flex-col justify-between min-h-[380px] hover:border-[#FFBF00]/40 transition-colors ${
-                    isFlipped ? "border-[#FFBF00]/30" : ""
-                  }`}
-                >
-                  {/* Top header on card */}
-                  <div className="flex items-center justify-between w-full pb-6 border-b border-zinc-200/60">
-                    <span className="font-mono text-xs text-zinc-500 tracking-widest uppercase">
-                      Law {activeLaw.number} of 33
-                    </span>
-                    <span className={`font-mono text-[10px] tracking-wider uppercase px-3 py-1 rounded-full border ${getCategoryColor(activeLaw.category)} font-bold`}>
-                      {activeLaw.category}
-                    </span>
-                  </div>
-
-                  {/* Body Contents depending on flipped state */}
-                  {!isFlipped ? (
-                    /* FRONT STATE: Description and Main Insight */
-                    <div className="py-6 space-y-4 flex-grow flex flex-col justify-center">
-                      <h3 className="font-sans text-2xl md:text-3xl font-black text-zinc-900 leading-tight">
-                        "{activeLaw.title}"
-                      </h3>
-                      <p className="font-sans text-zinc-600 text-sm md:text-sm font-normal leading-relaxed">
-                        {activeLaw.description}
-                      </p>
-                      <div className="font-sans text-xs text-[#FFBF00] flex items-center space-x-1 pt-2 font-bold">
-                        <span>Click card to reveal Action Plan</span>
-                        <ArrowRight className="w-3.5 h-3.5 animate-pulse" />
-                      </div>
-                    </div>
-                  ) : (
-                    /* BACK STATE: Practical Action Plan and Quote */
-                    <div className="py-6 space-y-4 flex-grow flex flex-col justify-center">
-                      <div className="border-l-2 border-[#FFBF00] pl-4 py-1 italic text-zinc-700 text-xs md:text-sm font-medium">
-                        "{activeLaw.quote}"
-                      </div>
-                      <div className="space-y-2.5 pt-2">
-                        <span className="font-sans text-2xs uppercase tracking-widest text-zinc-500 font-bold block">
-                          Micro Action Plan:
-                        </span>
-                        {activeLaw.actionPlan.map((plan, idx) => (
-                          <div key={idx} className="flex items-start space-x-2 text-zinc-600 text-xs md:text-sm font-normal">
-                            <CheckCircle2 className="w-4.5 h-4.5 text-[#FFBF00] shrink-0 mt-0.5" />
-                            <span>{plan}</span>
-                          </div>
-                        ))}
-                      </div>
-                      <div className="font-sans text-xs text-zinc-500 flex items-center space-x-1 pt-2 font-semibold">
-                        <span>Click card to see core philosophy</span>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Footer metadata */}
-                  <div className="pt-6 border-t border-zinc-200/60 flex items-center justify-between text-2xs text-zinc-500 font-mono">
-                    <span>ABIODUN BRAINARD</span>
-                    <span>TAP TO FLIP</span>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              {/* Controls Grid */}
-              <div className="flex items-center justify-between mt-6 gap-4 w-full">
-                <button
-                  id="draw-random-law-btn"
-                  onClick={drawRandomLaw}
-                  className="flex items-center space-x-2 bg-zinc-100 hover:bg-zinc-200 text-zinc-800 font-sans font-medium text-xs tracking-wider uppercase py-3.5 px-6 rounded-full border border-zinc-200 transition-colors shadow-2xs"
-                >
-                  <RefreshCw className="w-4 h-4 text-[#FFBF00]" />
-                  <span>Draw Random Law</span>
-                </button>
-
-                <button
-                  id="next-law-btn"
-                  onClick={handleNext}
-                  className="flex items-center space-x-2 bg-[#FFBF00] hover:bg-[#FFBF00]/85 text-black font-sans font-bold text-xs tracking-wider uppercase py-3.5 px-8 rounded-full shadow-lg shadow-[#FFBF00]/10 transition-all"
-                >
-                  <span>Next Law</span>
-                  <Layers className="w-4 h-4" />
-                </button>
+          {/* ================= RIGHT PAIR: FEATURED EPISODE ================= */}
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center border-t lg:border-t-0 lg:border-l border-zinc-200 pt-12 lg:pt-0 lg:pl-16">
+            {/* Text details column */}
+            <div className="md:col-span-7 space-y-6 flex flex-col justify-between h-full">
+              <div className="space-y-4">
+                <span className="font-sans text-xs tracking-widest text-[#B48C35] uppercase font-bold block">
+                  FEATURED EPISODE
+                </span>
+                
+                <h2 className="font-sans text-3xl md:text-4.5xl font-black text-zinc-900 tracking-tight leading-tight uppercase">
+                  From Idea to Impact
+                </h2>
+                
+                <p className="font-sans text-zinc-900 text-sm md:text-base font-semibold leading-relaxed">
+                  Real conversations. Real lessons. Real business growth.
+                </p>
+                
+                <p className="font-sans text-zinc-600 text-xs md:text-sm leading-relaxed font-normal">
+                  Watch the latest episode of Brainleads TV with entrepreneurs and leaders who are building and scaling successful businesses.
+                </p>
               </div>
 
+              <div className="pt-4">
+                <button
+                  id="watch-episode-btn"
+                  onClick={() => setIsEpisodeModalOpen(true)}
+                  className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-xs font-bold tracking-widest uppercase py-3.5 px-8 rounded shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  WATCH LATEST EPISODE
+                </button>
+              </div>
+            </div>
+
+            {/* Video Thumbnail column */}
+            <div className="md:col-span-5 flex justify-center md:justify-end">
+              <motion.div
+                whileHover={{ scale: 1.03 }}
+                transition={{ duration: 0.3 }}
+                onClick={() => setIsEpisodeModalOpen(true)}
+                className="cursor-pointer relative aspect-video w-full max-w-[280px] rounded-xl overflow-hidden shadow-xl border border-zinc-900 bg-black group"
+              >
+                <img
+                  src="/src/assets/images/idea_to_impact_thumb_1784079136243.jpg"
+                  alt="From Idea to Impact Video Thumbnail"
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-300"
+                />
+                
+                {/* Play Button Overlay */}
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/35 transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/40 flex items-center justify-center text-white group-hover:scale-110 group-hover:bg-[#B48C35] group-hover:border-[#B48C35] transition-all duration-300 shadow-md">
+                    <Play className="w-5 h-5 fill-current ml-0.5" />
+                  </div>
+                </div>
+
+                {/* Subtitle bottom text overlay */}
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/90 via-black/40 to-transparent text-left">
+                  <p className="font-sans text-[11px] font-black text-white uppercase tracking-wider leading-tight">
+                    FROM IDEA TO IMPACT
+                  </p>
+                  <p className="font-sans text-[9px] text-zinc-300 font-medium">
+                    with Abiodun Brainard
+                  </p>
+                </div>
+              </motion.div>
             </div>
           </div>
 
         </div>
       </div>
+
+      {/* ================= MODAL: BOOK DETAILS & SAMPLE PDF REQUEST ================= */}
+      <AnimatePresence>
+        {isBookModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95, y: 15 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 15 }}
+              className="bg-white rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden border border-zinc-200 flex flex-col md:flex-row"
+            >
+              {/* Left Side: Book Cover Presentation */}
+              <div className="bg-zinc-950 text-white p-8 flex flex-col justify-between items-center md:w-5/12 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-[#B48C35]/10 pointer-events-none" />
+                <div className="z-10 space-y-4">
+                  <span className="font-mono text-[9px] uppercase tracking-widest text-[#FFBF00] font-bold">
+                    Now Available
+                  </span>
+                  <h3 className="font-sans text-xl font-extrabold leading-tight">
+                    Sales is Teaching
+                  </h3>
+                </div>
+                
+                <img
+                  src="/src/assets/images/sales_book_mockup_1784079126778.jpg"
+                  alt="Sales Is Teaching Book"
+                  referrerPolicy="no-referrer"
+                  className="w-32 z-10 my-6 shadow-2xl rounded-r border-l-2 border-black/40"
+                />
+                
+                <div className="z-10 text-[10px] text-zinc-400 font-mono">
+                  BY ABIODUN BRAINARD
+                </div>
+              </div>
+
+              {/* Right Side: Form / Detail */}
+              <div className="p-8 md:w-7/12 relative flex flex-col justify-between">
+                <button
+                  onClick={() => setIsBookModalOpen(false)}
+                  className="absolute top-4 right-4 text-zinc-400 hover:text-zinc-600 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+
+                <div className="space-y-4">
+                  <div className="inline-flex items-center space-x-1.5 bg-[#B48C35]/10 border border-[#B48C35]/20 px-2.5 py-1 rounded-full text-[#B48C35]">
+                    <Sparkles className="w-3 h-3" />
+                    <span className="font-sans text-[10px] uppercase font-bold tracking-wider">Get a Free Chapter Preview</span>
+                  </div>
+
+                  <h4 className="font-sans text-xl font-black text-zinc-900 uppercase">
+                    Download Preview PDF
+                  </h4>
+                  
+                  <p className="font-sans text-zinc-600 text-xs leading-relaxed">
+                    Enter your details below to receive a high-impact sample chapter on your email instantly.
+                  </p>
+
+                  <AnimatePresence mode="wait">
+                    {!emailSubmitted ? (
+                      <motion.form
+                        key="book-form"
+                        onSubmit={handleBookSubmit}
+                        className="space-y-3 pt-2"
+                        initial={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                      >
+                        <div>
+                          <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Your Name</label>
+                          <input
+                            type="text"
+                            required
+                            placeholder="John Doe"
+                            value={formData.name}
+                            onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                            className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-zinc-200 focus:border-[#B48C35] focus:ring-1 focus:ring-[#B48C35] outline-none transition-all bg-zinc-50"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Email Address</label>
+                          <input
+                            type="email"
+                            required
+                            placeholder="john@company.com"
+                            value={formData.email}
+                            onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                            className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-zinc-200 focus:border-[#B48C35] focus:ring-1 focus:ring-[#B48C35] outline-none transition-all bg-zinc-50"
+                          />
+                        </div>
+                        <div>
+                          <label className="block text-[10px] font-bold uppercase tracking-wider text-zinc-500 mb-1">Organization / Title</label>
+                          <input
+                            type="text"
+                            placeholder="CEO at LeadCorp"
+                            value={formData.org}
+                            onChange={(e) => setFormData({ ...formData, org: e.target.value })}
+                            className="w-full text-xs px-3.5 py-2.5 rounded-lg border border-zinc-200 focus:border-[#B48C35] focus:ring-1 focus:ring-[#B48C35] outline-none transition-all bg-zinc-50"
+                          />
+                        </div>
+
+                        <div className="pt-2">
+                          <button
+                            type="submit"
+                            className="w-full bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-xs font-bold tracking-widest uppercase py-3 rounded-lg shadow transition-all duration-300 flex items-center justify-center space-x-2"
+                          >
+                            <Download className="w-4 h-4" />
+                            <span>Request Sample Chapter</span>
+                          </button>
+                        </div>
+                      </motion.form>
+                    ) : (
+                      <motion.div
+                        key="success-message"
+                        initial={{ opacity: 0, scale: 0.95 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        className="bg-emerald-50 border border-emerald-200 rounded-xl p-6 text-center space-y-3 py-10"
+                      >
+                        <div className="w-12 h-12 rounded-full bg-emerald-500/10 text-emerald-600 flex items-center justify-center mx-auto">
+                          <Check className="w-6 h-6 stroke-[3]" />
+                        </div>
+                        <h5 className="font-sans text-sm font-bold text-emerald-900 uppercase tracking-wide">
+                          Check Your Inbox!
+                        </h5>
+                        <p className="font-sans text-zinc-600 text-xs leading-relaxed max-w-xs mx-auto">
+                          Success! We've sent the first chapter of <span className="font-bold">Sales Is Teaching</span> to <span className="font-semibold text-zinc-900">{formData.email}</span>.
+                        </p>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* ================= MODAL: EPISODE VIDEO PLAYER ================= */}
+      <AnimatePresence>
+        {isEpisodeModalOpen && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/90 backdrop-blur-md">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-zinc-900 text-white rounded-2xl shadow-2xl max-w-4xl w-full overflow-hidden border border-zinc-800 flex flex-col md:flex-row relative"
+            >
+              {/* Close Button */}
+              <button
+                onClick={() => setIsEpisodeModalOpen(false)}
+                className="absolute top-4 right-4 z-50 text-zinc-400 hover:text-white transition-colors bg-zinc-950/40 p-1.5 rounded-full"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              {/* Main Simulated Player Area */}
+              <div className="md:w-8/12 bg-black relative flex flex-col justify-center items-center aspect-video md:aspect-auto min-h-[300px] md:min-h-[440px]">
+                {/* Simulated Playing Video Graphics */}
+                <div className="absolute inset-0 overflow-hidden">
+                  <img
+                    src="/src/assets/images/idea_to_impact_thumb_1784079136243.jpg"
+                    alt="Simulated video frame"
+                    referrerPolicy="no-referrer"
+                    className={`w-full h-full object-cover transition-all duration-700 ${isVideoPlaying ? "scale-105 blur-xs opacity-40 animate-pulse" : "opacity-90"}`}
+                  />
+                </div>
+
+                {/* Sound and Video Overlays */}
+                <div className="absolute bottom-4 left-4 right-4 z-10 flex items-center justify-between bg-black/60 backdrop-blur-md py-3 px-4 rounded-xl border border-white/5">
+                  <div className="flex items-center space-x-3">
+                    <button
+                      onClick={() => setIsVideoPlaying(!isVideoPlaying)}
+                      className="w-8 h-8 rounded-full bg-white text-zinc-950 flex items-center justify-center hover:scale-105 transition-transform"
+                    >
+                      {isVideoPlaying ? (
+                        <div className="flex space-x-0.5 items-center justify-center">
+                          <span className="w-1 h-3.5 bg-zinc-900 rounded-full animate-bounce" />
+                          <span className="w-1 h-3.5 bg-zinc-900 rounded-full animate-bounce [animation-delay:0.15s]" />
+                        </div>
+                      ) : (
+                        <Play className="w-3.5 h-3.5 fill-current ml-0.5" />
+                      )}
+                    </button>
+                    <div>
+                      <p className="font-sans text-[10px] text-zinc-400 uppercase tracking-widest leading-none">NOW STREAMING</p>
+                      <p className="font-sans text-xs font-black text-white leading-relaxed truncate max-w-[150px] md:max-w-[200px]">
+                        From Idea to Impact
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="flex items-center space-x-4">
+                    <span className="font-mono text-[10px] text-zinc-400">
+                      {isVideoPlaying ? "12:45 / 45:10" : "Paused"}
+                    </span>
+                    <button
+                      onClick={() => setIsMuted(!isMuted)}
+                      className="text-zinc-300 hover:text-white transition-colors"
+                    >
+                      {isMuted ? <VolumeX className="w-4.5 h-4.5" /> : <Volume2 className="w-4.5 h-4.5 text-[#FFBF00]" />}
+                    </button>
+                  </div>
+                </div>
+
+                {/* Big Center State Indicator if paused */}
+                {!isVideoPlaying && (
+                  <div className="z-10 bg-black/50 p-5 rounded-full border border-white/10 cursor-pointer hover:scale-105 transition-transform" onClick={() => setIsVideoPlaying(true)}>
+                    <Play className="w-8 h-8 text-[#FFBF00] fill-current ml-1" />
+                  </div>
+                )}
+              </div>
+
+              {/* Sidebar Episode List & Context */}
+              <div className="md:w-4/12 p-6 flex flex-col justify-between bg-zinc-950 text-left border-t md:border-t-0 md:border-l border-zinc-800">
+                <div className="space-y-6">
+                  <div>
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-[#FFBF00] font-bold block mb-2">
+                      EPISODE SHOWNOTES
+                    </span>
+                    <h4 className="font-sans text-lg font-black tracking-tight uppercase leading-snug">
+                      From Idea to Impact
+                    </h4>
+                    <p className="font-sans text-zinc-400 text-2xs mt-1">
+                      Featuring Abiodun Brainard & Industry Leaders
+                    </p>
+                  </div>
+
+                  <p className="font-sans text-zinc-300 text-xs leading-relaxed">
+                    Uncover the hidden metrics of scale. In this episode, we unpack the psychological shifts, structural blueprints, and exact funnels used to take operations from early validation to sustainable enterprise-level operations.
+                  </p>
+
+                  <div className="space-y-3">
+                    <span className="font-mono text-[9px] uppercase tracking-widest text-zinc-500 font-bold block">
+                      Up Next on Brainleads TV
+                    </span>
+                    
+                    <div className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-850 cursor-pointer transition-all flex items-center space-x-3 group">
+                      <div className="w-12 aspect-video bg-zinc-800 rounded overflow-hidden shrink-0">
+                        <img src="/src/assets/images/abiodun_portrait_2_1784039327745.jpg" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
+                      </div>
+                      <div>
+                        <p className="font-sans text-[10px] font-bold uppercase leading-snug truncate text-zinc-200 group-hover:text-white transition-colors">
+                          Scaling Past the $10M Mark
+                        </p>
+                        <p className="font-sans text-[9px] text-zinc-500">Episode 48 • 38 mins</p>
+                      </div>
+                    </div>
+
+                    <div className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-850 cursor-pointer transition-all flex items-center space-x-3 group">
+                      <div className="w-12 aspect-video bg-zinc-800 rounded overflow-hidden shrink-0">
+                        <img src="/src/assets/images/abiodun_portrait_3_1784039341805.jpg" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
+                      </div>
+                      <div>
+                        <p className="font-sans text-[10px] font-bold uppercase leading-snug truncate text-zinc-200 group-hover:text-white transition-colors">
+                          The Architecture of High-Performing Teams
+                        </p>
+                        <p className="font-sans text-[9px] text-zinc-500">Episode 47 • 52 mins</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="pt-6 border-t border-zinc-900 mt-6 md:mt-0">
+                  <a
+                    href="#contact"
+                    onClick={() => setIsEpisodeModalOpen(false)}
+                    className="w-full block text-center bg-zinc-800 hover:bg-zinc-700 text-white font-sans text-2xs font-extrabold tracking-widest uppercase py-3 rounded-lg border border-zinc-700 hover:border-zinc-600 transition-all"
+                  >
+                    APPLY AS A GUEST
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }

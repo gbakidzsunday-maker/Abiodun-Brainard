@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Timeline from "./components/Timeline";
 import Ventures from "./components/Ventures";
-import AudioPlayer from "./components/AudioPlayer";
 import LawsShowcase from "./components/LawsShowcase";
 import DragonsDen from "./components/DragonsDen";
 import ContactForm from "./components/ContactForm";
@@ -50,11 +49,6 @@ export default function App() {
 
   return (
     <div className="bg-[#F9FAFB] text-zinc-900 min-h-screen relative font-sans selection:bg-[#FFBF00] selection:text-black antialiased">
-      {/* Dynamic top bar notifier */}
-      <div className="bg-[#FFBF00] text-black py-2 px-6 flex justify-center items-center space-x-2 text-2xs md:text-xs font-sans tracking-wider uppercase font-extrabold z-50 relative">
-        <span>Welcome to Brainleads Academy — Let's learn, grow, and create opportunities together.</span>
-      </div>
-
       {/* Main Navigation */}
       <Navbar onNavClick={handleNavClick} activeSection={activeSection} />
 
@@ -65,9 +59,6 @@ export default function App() {
 
         {/* Timeline Story Section */}
         <Timeline />
-
-        {/* Podcast Media Player Section */}
-        <AudioPlayer />
 
         {/* Ventures Grid Section */}
         <Ventures />

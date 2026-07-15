@@ -1,128 +1,133 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "motion/react";
-import { INVESTMENTS_DATA } from "../data";
-import { Play, TrendingUp, Info, HelpCircle, FileText } from "lucide-react";
+import React from "react";
+import { motion } from "motion/react";
 
 export default function DragonsDen() {
-  const [selectedIdx, setSelectedIdx] = useState(0);
-
-  const activeInvestment = INVESTMENTS_DATA[selectedIdx];
-
   return (
-    <section id="dragons-den" className="py-24 bg-[#F9FAFB] border-t border-zinc-200 relative px-6 overflow-hidden">
-      {/* Visual background elements */}
-      <div className="absolute top-1/2 right-0 w-[400px] h-[400px] bg-[#FFBF00]/5 rounded-full blur-[120px] pointer-events-none" />
+    <section id="dragons-den" className="bg-[#090D16] border-y border-zinc-800/80 py-10 relative overflow-hidden px-6">
+      {/* Subtle gold glow behind */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[80px] bg-[#FFBF00]/5 rounded-full blur-[60px] pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto z-10 relative">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div className="max-w-7xl mx-auto z-10 relative flex flex-col items-center">
+        {/* "AS SEEN ON" Label */}
+        <div className="mb-8">
+          <span className="font-sans text-[11px] font-black tracking-[0.2em] text-[#B48C35] uppercase">
+            AS SEEN ON
+          </span>
+        </div>
+
+        {/* Logos Container */}
+        <div className="w-full flex flex-wrap justify-center items-center gap-x-12 gap-y-8 md:gap-x-16 lg:justify-between">
           
-          {/* Left: Interactive list of investments */}
-          <div className="lg:col-span-5 space-y-6">
-            <div className="inline-flex items-center space-x-2 bg-[#FFBF00]/10 border border-[#FFBF00]/25 px-3.5 py-1.5 rounded-full">
-              <span className="font-mono text-[10px] tracking-widest text-zinc-950 uppercase font-bold">
-                BBC ONE DRAGON'S DEN
-              </span>
+          {/* CTV */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="flex items-center space-x-1 hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <span className="text-white text-xl font-black tracking-widest font-sans">CTV</span>
+            <svg className="w-4 h-4 text-white fill-current shrink-0" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </motion.div>
+
+          {/* Global NEWS */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className="flex items-center space-x-2.5 hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <div className="text-right">
+              <div className="text-white text-[10px] font-light tracking-wide leading-none">Global</div>
+              <div className="text-white text-sm font-extrabold tracking-wider leading-none mt-0.5">NEWS</div>
             </div>
+            <svg className="w-5 h-5 text-white fill-current shrink-0" viewBox="0 0 100 100">
+              <path d="M10 50 L50 10 L90 50 L50 90 Z M50 25 L75 50 L50 75 Z" />
+            </svg>
+          </motion.div>
 
-            <h2 className="font-sans text-4xl md:text-5xl font-black text-zinc-900 tracking-tight uppercase leading-none">
-              Youngest Dragon <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 to-[#FFBF00]">
-                In History
-              </span>
-            </h2>
+          {/* CityNews */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.3 }}
+            className="flex items-center hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <span className="text-white text-lg font-black tracking-tight font-sans">City</span>
+            <span className="text-white text-lg font-normal tracking-tight font-sans">News</span>
+          </motion.div>
 
-            <p className="font-sans text-zinc-600 text-sm md:text-base font-normal leading-relaxed">
-              At just 28 years old, Abiodun took his seat alongside legendary titans in the Den. Bringing a new-generation digital perspective, he shook up traditional investing with modern viral marketing and tech-centric scale strategies.
-            </p>
+          {/* CBC Gem Circular Logo */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            className="flex items-center justify-center w-8 h-8 hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <svg className="w-7 h-7 text-white fill-current" viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="14" />
+              <path d="M50 20 L54 32 L46 32 Z" />
+              <path d="M50 80 L54 68 L46 68 Z" />
+              <path d="M20 50 L32 54 L32 46 Z" />
+              <path d="M80 50 L68 54 L68 46 Z" />
+              <path d="M28 28 L39 37 L34 43 Z" />
+              <path d="M72 28 L61 37 L66 43 Z" />
+              <path d="M28 72 L39 63 L34 57 Z" />
+              <path d="M72 72 L61 63 L66 57 Z" />
+            </svg>
+          </motion.div>
 
-            <div className="space-y-3 pt-4">
-              <span className="font-sans text-2xs uppercase tracking-widest text-zinc-500 font-bold block mb-2">
-                Pitches Approved & Backed:
-              </span>
-              {INVESTMENTS_DATA.map((inv, idx) => (
-                <button
-                  id={`inv-btn-${idx}`}
-                  key={inv.company}
-                  onClick={() => setSelectedIdx(idx)}
-                  className={`w-full text-left p-4 rounded-xl border flex items-center justify-between transition-all shadow-2xs ${
-                    selectedIdx === idx
-                      ? "bg-[#FFBF00] text-black border-[#FFBF00] font-bold shadow-md"
-                      : "bg-white text-zinc-600 border-zinc-200 hover:bg-zinc-100"
-                  }`}
-                >
-                  <div className="flex items-center space-x-3">
-                    <span className={`p-2 rounded-lg ${selectedIdx === idx ? "bg-black/10" : "bg-zinc-100"}`}>
-                      <TrendingUp className="w-4.5 h-4.5" />
-                    </span>
-                    <div>
-                      <h3 className="font-sans text-sm font-bold uppercase tracking-wider">{inv.company}</h3>
-                      <p className={`font-sans text-2xs ${selectedIdx === idx ? "text-zinc-800" : "text-zinc-500"}`}>{inv.industry}</p>
-                    </div>
-                  </div>
-                  <span className="font-mono text-xs font-bold uppercase">{inv.season}</span>
-                </button>
-              ))}
-            </div>
-          </div>
+          {/* ROGERS tv */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.5 }}
+            className="flex items-baseline space-x-1 hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <span className="text-white text-base font-extrabold tracking-wider font-sans">ROGERS</span>
+            <span className="text-white text-[11px] font-medium font-sans lowercase">tv</span>
+          </motion.div>
 
-          {/* Right: Investment Details Panel */}
-          <div className="lg:col-span-7">
-            <AnimatePresence mode="wait">
-              <motion.div
-                id={`investment-panel-${activeInvestment.company.replace(" ", "-")}`}
-                key={activeInvestment.company}
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.3 }}
-                className="bg-white border border-zinc-200 rounded-3xl p-8 md:p-10 shadow-xl relative"
-              >
-                {/* Visual signature overlay */}
-                <div className="absolute top-8 right-8 font-mono text-xs text-zinc-950 font-bold uppercase tracking-wider bg-[#FFBF00]/20 border border-[#FFBF00]/30 px-3 py-1 rounded-full">
-                  {activeInvestment.deal}
-                </div>
+          {/* WINNIPEG FREE PRESS */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.6 }}
+            className="text-left font-serif hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <div className="text-white text-[11px] font-black tracking-wider leading-none uppercase">WINNIPEG</div>
+            <div className="text-white text-[10px] font-bold tracking-widest leading-none mt-1 uppercase">FREE PRESS</div>
+          </motion.div>
 
-                <div className="space-y-6">
-                  <div className="pb-4 border-b border-zinc-200/60">
-                    <span className="font-sans text-xs text-[#FFBF00] uppercase tracking-widest block font-bold">
-                      Featured Investment
-                    </span>
-                    <h3 className="font-sans text-2xl md:text-3xl font-black text-zinc-900 mt-1 uppercase tracking-tight">
-                      {activeInvestment.company}
-                    </h3>
-                  </div>
+          {/* BUSINESS EXAMINER */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.7 }}
+            className="text-left font-sans hover:opacity-100 opacity-80 transition-opacity"
+          >
+            <div className="text-white text-[10px] font-extrabold tracking-widest leading-none uppercase">BUSINESS</div>
+            <div className="text-white text-[9px] font-semibold tracking-widest leading-none mt-1 uppercase">EXAMINER</div>
+          </motion.div>
 
-                  <div className="space-y-4 text-zinc-600 font-normal">
-                    <div className="flex items-start space-x-3 text-sm">
-                      <FileText className="w-5 h-5 text-[#FFBF00] shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-zinc-900 block font-sans font-bold mb-1">Deal Details & Valuation:</strong>
-                        <p className="font-sans text-xs md:text-sm leading-relaxed">{activeInvestment.details}</p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start space-x-3 text-sm pt-2">
-                      <TrendingUp className="w-5 h-5 text-green-600 shrink-0 mt-0.5" />
-                      <div>
-                        <strong className="text-zinc-900 block font-sans font-bold mb-1">Commercial Outcome & Growth:</strong>
-                        <p className="font-sans text-xs md:text-sm leading-relaxed">{activeInvestment.outcome}</p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Quote-like callout of investment thesis */}
-                  <div className="bg-zinc-50 border border-zinc-200 p-4 rounded-xl mt-6">
-                    <span className="font-sans text-2xs uppercase tracking-widest text-zinc-500 font-bold block mb-1">
-                      Abiodun's Investment Thesis
-                    </span>
-                    <p className="font-sans italic text-xs text-zinc-700 leading-relaxed font-normal">
-                      "I look for founders who solve friction with modern authenticity. We didn't just back the product; we took over their viral digital marketing distribution to build a massive global community."
-                    </p>
-                  </div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
+          {/* & More */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.8 }}
+            className="text-zinc-400 text-xs font-semibold tracking-wide hover:text-white transition-colors"
+          >
+            & More
+          </motion.div>
 
         </div>
       </div>
