@@ -1,24 +1,10 @@
-import React, { useState } from "react";
-import { Check, Mail, Sparkles, Send } from "lucide-react";
+import React from "react";
 
 interface FooterProps {
   onNavClick: (sectionId: string) => void;
 }
 
 export default function Footer({ onNavClick }: FooterProps) {
-  const [email, setEmail] = useState("");
-  const [subscribed, setSubscribed] = useState(false);
-
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email.trim()) return;
-    setSubscribed(true);
-    setTimeout(() => {
-      setSubscribed(false);
-      setEmail("");
-    }, 3000);
-  };
-
   const socialLinks = [
     {
       name: "LinkedIn",
@@ -98,46 +84,8 @@ export default function Footer({ onNavClick }: FooterProps) {
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-stretch">
             
-            {/* COLUMN 1: STAY CONNECTED */}
-            <div className="lg:col-span-4 flex flex-col justify-between space-y-6">
-              <div className="space-y-3.5">
-                <h4 className="font-sans text-xs font-black tracking-widest text-[#B48C35] uppercase">
-                  STAY CONNECTED
-                </h4>
-                <p className="font-sans text-zinc-600 text-xs md:text-[13px] leading-relaxed max-w-sm">
-                  Get practical business insights, new episodes, book updates, event invitations and exclusive resources delivered to your inbox.
-                </p>
-              </div>
-
-              <div className="w-full max-w-sm">
-                {!subscribed ? (
-                  <form onSubmit={handleSubscribe} className="flex items-center w-full">
-                    <input
-                      type="email"
-                      required
-                      placeholder="Enter your email address"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="flex-1 bg-zinc-50 border border-zinc-200 focus:border-[#B48C35]/60 focus:bg-white text-zinc-800 text-xs px-4 py-3 rounded-l-lg outline-none transition-all placeholder:text-zinc-400"
-                    />
-                    <button
-                      type="submit"
-                      className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-2xs font-bold tracking-widest uppercase px-6 py-3 rounded-r-lg transition-all shadow-sm flex items-center shrink-0"
-                    >
-                      SUBSCRIBE
-                    </button>
-                  </form>
-                ) : (
-                  <div className="flex items-center space-x-2.5 bg-emerald-50 border border-emerald-100 rounded-lg p-3 text-emerald-800 text-xs">
-                    <Check className="w-4 h-4 text-emerald-600 shrink-0" />
-                    <span>Thank you for subscribing! Check your inbox.</span>
-                  </div>
-                )}
-              </div>
-            </div>
-
-            {/* COLUMN 2: FOLLOW BRAINLEADS ACADEMY */}
-            <div className="lg:col-span-4 lg:border-l lg:border-zinc-200/80 lg:px-10 flex flex-col justify-between space-y-6">
+            {/* COLUMN 1: FOLLOW BRAINLEADS ACADEMY */}
+            <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
               <div className="space-y-3.5">
                 <h4 className="font-sans text-xs font-black tracking-widest text-[#B48C35] uppercase">
                   FOLLOW BRAINLEADS ACADEMY
@@ -164,8 +112,8 @@ export default function Footer({ onNavClick }: FooterProps) {
               </div>
             </div>
 
-            {/* COLUMN 3: LOGO EMBLEM */}
-            <div className="lg:col-span-4 lg:border-l lg:border-zinc-200/80 lg:pl-10 flex flex-col items-center justify-center text-center">
+            {/* COLUMN 2: LOGO EMBLEM */}
+            <div className="lg:col-span-6 lg:border-l lg:border-zinc-200/80 lg:pl-10 flex flex-col items-center justify-center text-center">
               {/* Logo Image */}
               <div className="relative group mb-4">
                 <img 
