@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 import { ArrowDown, BookOpen, Target, Users, Play, ArrowRight } from "lucide-react";
+import heroBgImg from "../assets/images/nigerian_hero_1784038962505.jpg";
 
 interface HeroProps {
   onCtaclick: (sectionId: string) => void;
@@ -14,13 +15,13 @@ export default function Hero({ onCtaclick }: HeroProps) {
       {/* Background Image filling and fitting the first section */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=1920&auto=format&fit=crop"
-          alt="Bright college campus with students"
+          src={heroBgImg}
+          alt="Nigerian business founders background"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        {/* Soft gradient overlay: Darker on the left for text contrast, very bright and transparent on the center/right to show campus */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/45 to-black/15" />
+        {/* Deep, highly polished dark glass overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/95 via-black/85 to-zinc-950/95" />
       </div>
 
       <div className="w-full max-w-7xl mx-auto z-10 mt-12 md:mt-20">

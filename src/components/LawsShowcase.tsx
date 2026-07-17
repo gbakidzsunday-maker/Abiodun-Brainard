@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Play, X, Check, Mail, Sparkles, Download, Volume2, VolumeX, BookOpen, ArrowRight } from "lucide-react";
 
-// Correctly import local assets for production bundling
-import salesBookMockup from "../assets/images/sales_book_mockup_1784079126778.jpg";
-import ideaToImpactThumb from "../assets/images/idea_to_impact_thumb_1784079136243.jpg";
-import abiodunPortrait2 from "../assets/images/abiodun_portrait_2_1784039327745.jpg";
-import abiodunPortrait3 from "../assets/images/abiodun_portrait_3_1784039341805.jpg";
-
 export default function LawsShowcase() {
   const [isBookModalOpen, setIsBookModalOpen] = useState(false);
   const [isEpisodeModalOpen, setIsEpisodeModalOpen] = useState(false);
@@ -84,7 +78,7 @@ export default function LawsShowcase() {
                 className="cursor-pointer relative drop-shadow-[0_15px_30px_rgba(0,0,0,0.15)] group"
               >
                 <img
-                  src={salesBookMockup}
+                  src="/src/assets/images/sales_book_mockup_1784079126778.jpg"
                   alt="Sales Is Teaching Book Cover Mockup"
                   referrerPolicy="no-referrer"
                   className="w-48 md:w-56 rounded-r-lg object-cover border-l-4 border-black/40"
@@ -140,7 +134,7 @@ export default function LawsShowcase() {
                 className="cursor-pointer relative aspect-video w-full max-w-[280px] rounded-xl overflow-hidden shadow-xl border border-zinc-900 bg-black group"
               >
                 <img
-                  src={ideaToImpactThumb}
+                  src="/src/assets/images/idea_to_impact_thumb_1784079136243.jpg"
                   alt="From Idea to Impact Video Thumbnail"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover opacity-85 group-hover:opacity-100 transition-opacity duration-300"
@@ -192,7 +186,7 @@ export default function LawsShowcase() {
                 </div>
                 
                 <img
-                  src={salesBookMockup}
+                  src="/src/assets/images/sales_book_mockup_1784079126778.jpg"
                   alt="Sales Is Teaching Book"
                   referrerPolicy="no-referrer"
                   className="w-32 z-10 my-6 shadow-2xl rounded-r border-l-2 border-black/40"
@@ -327,7 +321,7 @@ export default function LawsShowcase() {
                 {/* Simulated Playing Video Graphics */}
                 <div className="absolute inset-0 overflow-hidden">
                   <img
-                    src={ideaToImpactThumb}
+                    src="/src/assets/images/idea_to_impact_thumb_1784079136243.jpg"
                     alt="Simulated video frame"
                     referrerPolicy="no-referrer"
                     className={`w-full h-full object-cover transition-all duration-700 ${isVideoPlaying ? "scale-105 blur-xs opacity-40 animate-pulse" : "opacity-90"}`}
@@ -405,7 +399,7 @@ export default function LawsShowcase() {
                     
                     <div className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-850 cursor-pointer transition-all flex items-center space-x-3 group">
                       <div className="w-12 aspect-video bg-zinc-800 rounded overflow-hidden shrink-0">
-                        <img src={abiodunPortrait2} className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
+                        <img src="/src/assets/images/abiodun_portrait_2_1784039327745.jpg" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
                       </div>
                       <div>
                         <p className="font-sans text-[10px] font-bold uppercase leading-snug truncate text-zinc-200 group-hover:text-white transition-colors">
@@ -417,7 +411,7 @@ export default function LawsShowcase() {
 
                     <div className="p-2.5 rounded-lg bg-zinc-900 border border-zinc-800 hover:bg-zinc-850 cursor-pointer transition-all flex items-center space-x-3 group">
                       <div className="w-12 aspect-video bg-zinc-800 rounded overflow-hidden shrink-0">
-                        <img src={abiodunPortrait3} className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
+                        <img src="/src/assets/images/abiodun_portrait_3_1784039341805.jpg" className="w-full h-full object-cover grayscale opacity-70 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-300" referrerPolicy="no-referrer" />
                       </div>
                       <div>
                         <p className="font-sans text-[10px] font-bold uppercase leading-snug truncate text-zinc-200 group-hover:text-white transition-colors">
