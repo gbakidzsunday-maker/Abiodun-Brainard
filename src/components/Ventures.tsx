@@ -76,9 +76,9 @@ export default function Ventures({ onNavClick }: VenturesProps) {
 
       <div className="max-w-7xl mx-auto z-10 relative">
         <div className="text-center space-y-4 mb-16">
-          <span className="font-mono text-xs text-[#B48C35] uppercase tracking-widest font-bold">EDUCATIONAL INITIATIVES</span>
-          <h2 className="font-sans text-3xl md:text-4xl font-black text-zinc-950 tracking-tight uppercase">
-            LEARN WITH BRAINLEADS
+          <span className="font-mono text-xs text-[#B48C35] uppercase tracking-widest font-bold">BUSINESS EDUCATION</span>
+          <h2 className="font-sans text-3xl md:text-4xl font-black text-zinc-950 tracking-tight">
+            Practical knowledge. Real Business Growth
           </h2>
           <div className="w-16 h-1 bg-[#B48C35] mx-auto mt-4 rounded-full" />
         </div>

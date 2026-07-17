@@ -8,7 +8,7 @@ export default function ContactForm() {
     email: "",
     company: "",
     eventDetails: "",
-    topic: "Speaking Event",
+    topic: "Training Programs",
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -50,15 +50,21 @@ export default function ContactForm() {
           
           {/* Left panel: Info */}
           <div className="lg:col-span-5 space-y-6">
-            <h2 className="font-sans text-4xl md:text-5xl font-black text-zinc-900 tracking-tight uppercase leading-none">
-              Let's Create <br />
+            <h2 className="font-sans text-4xl md:text-5xl font-black text-zinc-900 tracking-tight uppercase leading-tight">
+              Let's Build <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-zinc-950 to-[#B48C35]">
-                An Impact
+                the Future of Business
               </span>
             </h2>
 
-            <p className="font-sans text-zinc-600 text-sm md:text-base font-normal leading-relaxed">
-              Have an upcoming conference, corporate summit, podcast guest invitation, or investment proposal? Fill out the form, and my management team will be in touch with you shortly.
+            <p className="font-sans text-zinc-600 text-sm md:text-base font-normal leading-relaxed space-y-4">
+              <span>
+                Whether you're interested in corporate training, workshops, keynote sessions, business education, partnerships, or enterprise learning solutions, Brainleads Academy is ready to help.
+              </span>
+              <br /><br />
+              <span>
+                Complete the form below, and a member of our team will respond to your inquiry.
+              </span>
             </p>
 
             {/* Quick contact list */}
@@ -153,10 +159,12 @@ export default function ContactForm() {
                           onChange={(e) => setFormData({ ...formData, topic: e.target.value })}
                           className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors cursor-pointer appearance-none"
                         >
-                          <option value="Speaking Event">Keynote / Speaking Event</option>
-                          <option value="Investment / VC">Flight Fund / Investment Pitch</option>
-                          <option value="Media Inquiry">Podcast / Media Inquiry</option>
-                          <option value="Press Interview">Press & media relations</option>
+                          <option value="Training Programs">Training Programs</option>
+                          <option value="Keynote Speaking">Keynote Speaking</option>
+                          <option value="Workshops & Seminars">Workshops & Seminars</option>
+                          <option value="Business Consulting">Business Consulting</option>
+                          <option value="Podcast & Media Inquiries">Podcast & Media Inquiries</option>
+                          <option value="General Inquiries">General Inquiries</option>
                         </select>
                       </div>
                     </div>
@@ -164,14 +172,14 @@ export default function ContactForm() {
                     {/* Details input */}
                     <div className="space-y-2">
                       <label className="block font-sans text-2xs uppercase tracking-widest text-zinc-500 font-bold">
-                        Message & Event Details
+                        More details
                       </label>
                       <textarea
                         id="form-details-input"
                         rows={4}
                         value={formData.eventDetails}
                         onChange={(e) => setFormData({ ...formData, eventDetails: e.target.value })}
-                        placeholder="Provide details about dates, budget range, and visual requirements..."
+                        placeholder="Tell us about your inquiry and any other relevant details"
                         className="w-full font-sans text-xs md:text-sm bg-zinc-50 border border-zinc-200 px-4 py-3 rounded-xl outline-none text-zinc-900 focus:bg-white focus:border-[#B48C35] transition-colors resize-none"
                       />
                       {errors.eventDetails && (

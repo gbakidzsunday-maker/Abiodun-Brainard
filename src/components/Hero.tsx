@@ -25,10 +25,10 @@ export default function Hero({ onCtaclick }: HeroProps) {
       </div>
 
       <div className="w-full max-w-7xl mx-auto z-10 mt-12 md:mt-20">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="max-w-4xl">
           
-          {/* ================= LEFT COLUMN: HERO WRITE-UP ================= */}
-          <div className="lg:col-span-7 space-y-6 sm:space-y-8 text-left">
+          {/* ================= HERO WRITE-UP ================= */}
+          <div className="space-y-6 sm:space-y-8 text-left">
             
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -53,8 +53,16 @@ export default function Hero({ onCtaclick }: HeroProps) {
               <h2 className="font-sans text-lg sm:text-xl md:text-2xl font-bold text-white tracking-tight leading-snug">
                 Learn. Grow. Lead. Build a Business That Lasts.
               </h2>
-              <p className="font-sans text-zinc-300 text-xs sm:text-sm md:text-base max-w-2xl font-normal leading-relaxed">
-                Brainleads Academy is a business education platform dedicated to equipping entrepreneurs, professionals, and future business leaders with practical knowledge, strategies, and the right mindset to create opportunities, lead with confidence, and achieve lasting success.
+              <p className="font-sans text-zinc-300 text-xs sm:text-sm md:text-base max-w-2xl font-normal leading-relaxed space-y-4">
+                <span className="block">
+                  Brainleads Academy exists to solve the real-world challenges entrepreneurs, professionals, and future leaders face every day.
+                </span>
+                <span className="block">
+                  We provide practical education, proven strategies, and real-world insights that empower individuals to turn ideas into successful businesses, grow and scale with confidence, build organizations that thrive beyond their founders, and create lasting impact.
+                </span>
+                <span className="block">
+                  Our vision is to become the trusted destination where people don't just learn business they gain the knowledge, skills, and systems to solve problems, make better decisions, and build businesses that succeed in a changing world.
+                </span>
               </p>
             </motion.div>
 
@@ -117,33 +125,6 @@ export default function Hero({ onCtaclick }: HeroProps) {
                   <Play className="w-1.5 h-1.5 text-[#B48C35] fill-[#B48C35] ml-[1px]" />
                 </div>
               </button>
-            </motion.div>
-
-          </div>
-
-          {/* ================= RIGHT COLUMN: GOLD CREST & INSPIRED QUOTE ================= */}
-          <div className="lg:col-span-5 flex flex-col items-center justify-center text-center lg:border-l lg:border-zinc-800/60 lg:pl-10 space-y-6">
-            
-            {/* Inspiration Quote */}
-            <motion.div
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.35 }}
-              className="flex flex-col items-center max-w-sm space-y-2 px-4"
-            >
-              {/* Gold Quote Mark */}
-              <span className="font-serif text-4xl leading-none text-[#B48C35] font-bold select-none h-4">
-                “
-              </span>
-              
-              <p className="font-sans text-white text-sm sm:text-base font-normal tracking-wide leading-relaxed">
-                Knowledge creates opportunities, Action creates results.
-              </p>
-              
-              {/* Gold Handwriting/Signature Sign */}
-              <span className="font-signature text-3xl sm:text-4xl text-[#B48C35] tracking-wide mt-2 block">
-                Abiodun Brainard
-              </span>
             </motion.div>
 
           </div>
