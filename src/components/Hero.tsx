@@ -124,20 +124,6 @@ export default function Hero({ onCtaclick }: HeroProps) {
           {/* ================= RIGHT COLUMN: GOLD CREST & INSPIRED QUOTE ================= */}
           <div className="lg:col-span-5 flex flex-col items-center justify-center text-center lg:border-l lg:border-zinc-800/60 lg:pl-10 space-y-6">
             
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative max-w-xs flex items-center justify-center group hover:scale-[1.03] transition-transform duration-300"
-            >
-              <img 
-                src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36.jpg" 
-                alt="Brain Leads Group Logo" 
-                className="h-24 md:h-28 lg:h-32 w-auto object-contain rounded-2xl"
-                referrerPolicy="no-referrer"
-              />
-            </motion.div>
-
             {/* Inspiration Quote */}
             <motion.div
               initial={{ opacity: 0, y: 15 }}

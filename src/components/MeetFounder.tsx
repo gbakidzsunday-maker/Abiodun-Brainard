@@ -60,9 +60,9 @@ export default function MeetFounder({ onReadJourneyClick }: MeetFounderProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-sans text-[#B48C35] text-xs sm:text-sm md:text-base font-bold tracking-wide leading-relaxed border-b border-zinc-200/60 pb-4"
+              className="font-sans bg-[#B48C35] text-white text-xs sm:text-sm md:text-base font-semibold tracking-wide leading-relaxed px-5 py-3 rounded-lg shadow-sm inline-block border border-[#9E7728]"
             >
-              Business Growth Educator <span className="text-zinc-300 mx-1">|</span> Entrepreneur <span className="text-zinc-300 mx-1">|</span> Author <span className="text-zinc-300 mx-1">|</span> Speaker <span className="text-zinc-300 mx-1">|</span> Consultant <span className="text-zinc-300 mx-1">|</span> Founder, Brainleads Group
+              Founder, Brainleads Group
             </motion.p>
 
             <motion.p
