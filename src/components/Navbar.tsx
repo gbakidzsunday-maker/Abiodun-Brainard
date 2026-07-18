@@ -29,8 +29,10 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   return (
     <nav
       id="main-nav"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-zinc-200/80 shadow-sm ${
-        isScrolled ? "py-3" : "py-4.5"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled || isOpen
+          ? "bg-white/95 backdrop-blur-md border-b border-zinc-200/80 shadow-sm py-3"
+          : "bg-transparent border-b border-transparent shadow-none py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -38,12 +40,14 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
         <button
           id="logo-btn"
           onClick={() => onNavClick("hero")}
-          className="flex items-center justify-center focus:outline-none transition-transform duration-300 hover:scale-[1.03] max-h-12 overflow-hidden"
+          className="flex items-center justify-center focus:outline-none transition-transform duration-300 hover:scale-[1.03] max-h-24 overflow-hidden"
         >
           <img 
             src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36-removebg-preview.png" 
             alt="Brain Leads Group Logo" 
-            className="h-7 md:h-9 max-w-[130px] md:max-w-[160px] w-auto object-contain"
+            className={`h-14 md:h-18 max-w-[260px] md:max-w-[320px] w-auto object-contain transition-all duration-300 ${
+              isScrolled || isOpen ? "" : "brightness-0 invert"
+            }`}
             referrerPolicy="no-referrer"
           />
         </button>
@@ -58,8 +62,12 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
                 onClick={() => onNavClick(item.id)}
                 className={`font-sans text-sm tracking-wider uppercase transition-colors relative py-1 ${
                   activeSection === item.id
-                    ? "text-zinc-900 font-bold"
-                    : "text-zinc-500 hover:text-zinc-900"
+                    ? isScrolled
+                      ? "text-zinc-900 font-bold"
+                      : "text-white font-bold"
+                    : isScrolled
+                      ? "text-zinc-500 hover:text-zinc-900"
+                      : "text-white/70 hover:text-white"
                 }`}
               >
                 {item.label}
@@ -88,7 +96,11 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
         <button
           id="mobile-menu-toggle"
           onClick={() => setIsOpen(!isOpen)}
-          className="lg:hidden text-zinc-500 hover:text-zinc-900 p-2"
+          className={`lg:hidden p-2 transition-colors ${
+            isScrolled || isOpen
+              ? "text-zinc-500 hover:text-zinc-900"
+              : "text-white/80 hover:text-white"
+          }`}
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>

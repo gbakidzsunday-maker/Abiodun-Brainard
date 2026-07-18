@@ -119,7 +119,7 @@ export default function Footer({ onNavClick }: FooterProps) {
                 <img 
                   src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36-removebg-preview.png" 
                   alt="Brain Leads Group Logo" 
-                  className="h-14 w-auto object-contain"
+                  className="h-28 w-auto object-contain"
                   referrerPolicy="no-referrer"
                 />
               </div>

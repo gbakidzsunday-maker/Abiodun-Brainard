@@ -7,6 +7,21 @@ interface ContactFormProps {
   details?: string;
 }
 
+// --- Google Form submission config ---
+// 1. Replace GOOGLE_FORM_ACTION_URL with your form's "formResponse" URL.
+// 2. Replace each entry.XXXXXXXXX below with the real entry IDs from your form.
+// See the step-by-step guide provided alongside this file for how to find these.
+const GOOGLE_FORM_ACTION_URL =
+  "https://docs.google.com/forms/d/e/1CYynVQ6--5xsfbw3lwUsTLGfyCGRpIu7UzaQF7gTNSo/formResponse";
+
+const GOOGLE_FORM_ENTRIES = {
+  name: "entry.1602437685",
+  email: "entry.1178575313",
+  company: "entry.2014805882",
+  topic: "entry.376291297",
+  eventDetails: "entry.742482085",
+};
+
 export default function ContactForm({ topic, details }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
@@ -44,17 +59,35 @@ export default function ContactForm({ topic, details }: ContactFormProps) {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
 
     setIsSubmitting(true);
 
-    // Simulate an API submission delay
-    setTimeout(() => {
-      setIsSubmitting(false);
+    const body = new URLSearchParams();
+    body.append(GOOGLE_FORM_ENTRIES.name, formData.name);
+    body.append(GOOGLE_FORM_ENTRIES.email, formData.email);
+    body.append(GOOGLE_FORM_ENTRIES.company, formData.company);
+    body.append(GOOGLE_FORM_ENTRIES.topic, formData.topic);
+    body.append(GOOGLE_FORM_ENTRIES.eventDetails, formData.eventDetails);
+
+    try {
+      // Google Forms doesn't allow reading the response (CORS), so we use
+      // "no-cors" and just assume success if the request didn't throw.
+      await fetch(GOOGLE_FORM_ACTION_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: body.toString(),
+      });
       setIsSubmitted(true);
-    }, 1500);
+    } catch (err) {
+      console.error("Form submission failed:", err);
+      setErrors({ eventDetails: "Something went wrong. Please try again." });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
