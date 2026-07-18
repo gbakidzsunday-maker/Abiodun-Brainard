@@ -12,7 +12,7 @@ interface ContactFormProps {
 // 2. Replace each entry.XXXXXXXXX below with the real entry IDs from your form.
 // See the step-by-step guide provided alongside this file for how to find these.
 const GOOGLE_FORM_ACTION_URL =
-  "https://docs.google.com/forms/d/e/1CYynVQ6--5xsfbw3lwUsTLGfyCGRpIu7UzaQF7gTNSo/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLScMHC-4x2ucpsmjB1Aq6E5oAjlER3vQji5BQEGv5In22VQQdA/formResponse";
 
 const GOOGLE_FORM_ENTRIES = {
   name: "entry.1602437685",
