@@ -29,8 +29,8 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   return (
     <nav
       id="main-nav"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent ${
-        isScrolled ? "py-4" : "py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-zinc-200/80 shadow-sm ${
+        isScrolled ? "py-3" : "py-4.5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
@@ -38,12 +38,12 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
         <button
           id="logo-btn"
           onClick={() => onNavClick("hero")}
-          className="flex items-center focus:outline-none transition-transform duration-300 hover:scale-[1.03]"
+          className="flex items-center justify-center focus:outline-none transition-transform duration-300 hover:scale-[1.03] max-h-12 overflow-hidden"
         >
           <img 
-            src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36.jpg" 
+            src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-14-15-59-36-removebg-preview.png" 
             alt="Brain Leads Group Logo" 
-            className="h-28 md:h-32 lg:h-40 w-auto object-contain rounded-2xl"
+            className="h-7 md:h-9 max-w-[130px] md:max-w-[160px] w-auto object-contain"
             referrerPolicy="no-referrer"
           />
         </button>

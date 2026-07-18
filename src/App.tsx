@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import MeetFounder from "./components/MeetFounder";
+import LearningPath from "./components/LearningPath";
 import Timeline from "./components/Timeline";
 import Ventures from "./components/Ventures";
 import LawsShowcase from "./components/LawsShowcase";
@@ -15,6 +16,14 @@ export default function App() {
   const [currentPage, setCurrentPage] = useState("home"); // "home" or "journey"
   const [activeSection, setActiveSection] = useState("hero");
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [contactTopic, setContactTopic] = useState("General Inquiries");
+  const [contactDetails, setContactDetails] = useState("");
+
+  const handlePathSelect = (pathTitle: string) => {
+    setContactTopic("General Inquiries");
+    setContactDetails(`I am interested in exploring the following learning path: "${pathTitle}".\n\n[Tell us about your inquiry and any other relevant details]`);
+    handleNavClick("contact");
+  };
 
   // Scroll to top when page changes
   useEffect(() => {
@@ -29,7 +38,7 @@ export default function App() {
 
       if (currentPage !== "home") return;
 
-      const sections = ["hero", "about", "ventures", "books", "dragons-den", "contact"];
+      const sections = ["hero", "about", "learning-path", "ventures", "books", "dragons-den", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {
@@ -101,6 +110,9 @@ export default function App() {
               {/* Meet the Founder Section */}
               <MeetFounder onReadJourneyClick={() => handleNavClick("about")} />
 
+              {/* Find Your Learning Path Section */}
+              <LearningPath onPathSelect={handlePathSelect} />
+
               {/* Ventures Grid Section */}
               <Ventures onNavClick={handleNavClick} />
 
@@ -111,7 +123,7 @@ export default function App() {
               <DragonsDen />
 
               {/* Press booking form */}
-              <ContactForm />
+              <ContactForm topic={contactTopic} details={contactDetails} />
             </main>
           </motion.div>
         ) : (

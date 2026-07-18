@@ -1,8 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Mail, MessageSquare, Phone, Send, CheckCircle, ArrowRight, Sparkles } from "lucide-react";
 
-export default function ContactForm() {
+interface ContactFormProps {
+  topic?: string;
+  details?: string;
+}
+
+export default function ContactForm({ topic, details }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +15,18 @@ export default function ContactForm() {
     eventDetails: "",
     topic: "Training Programs",
   });
+
+  useEffect(() => {
+    if (topic) {
+      setFormData((prev) => ({ ...prev, topic }));
+    }
+  }, [topic]);
+
+  useEffect(() => {
+    if (details !== undefined) {
+      setFormData((prev) => ({ ...prev, eventDetails: details }));
+    }
+  }, [details]);
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
