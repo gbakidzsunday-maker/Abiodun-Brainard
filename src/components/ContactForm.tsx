@@ -12,14 +12,14 @@ interface ContactFormProps {
 // 2. Replace each entry.XXXXXXXXX below with the real entry IDs from your form.
 // See the step-by-step guide provided alongside this file for how to find these.
 const GOOGLE_FORM_ACTION_URL =
-  "https://docs.google.com/forms/d/e/1FAIpQLScMHC-4x2ucpsmjB1Aq6E5oAjlER3vQji5BQEGv5In22VQQdA/formResponse";
+  "https://docs.google.com/forms/d/e/1FAIpQLSePl0pfh7dsgLY-txOTwUgdqfMA9hAA-U-Z0HktfPNB_Xhihg/formResponse";
 
 const GOOGLE_FORM_ENTRIES = {
-  name: "entry.1602437685",
-  email: "entry.1178575313",
-  company: "entry.2014805882",
-  topic: "entry.376291297",
-  eventDetails: "entry.742482085",
+  name: "entry.613352171",
+  email: "entry.1907419535",
+  company: "entry.1963553108",
+  topic: "entry.1367984071",
+  eventDetails: "entry.856377230",
 };
 
 export default function ContactForm({ topic, details }: ContactFormProps) {
