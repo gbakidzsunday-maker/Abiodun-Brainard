@@ -16,7 +16,7 @@ export default function Hero({ onCtaclick }: HeroProps) {
       <div className="absolute inset-0 z-0">
         <img
           src={heroBgImg}
-          alt="Nigerian business founders background"
+          alt="Business education and entrepreneurship training at Brainleads Academy"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
