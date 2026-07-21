@@ -10,7 +10,7 @@ interface ContactFormProps {
 // --- Backend submission config ---
 // After deploying the Apps Script Web App (see webapp-backend.gs), paste
 // its /exec URL here.
-const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwe2hVj1tPOaoX0O3jebUxmy-kKBVMj8Z85Cx9mSD-lOBljgG03gw-rkYMaEgKQ5l_iCA/exec";
+const WEBAPP_URL = "https://script.google.com/macros/s/AKfycbyFsoIJCo6X4Vh6z0zl-z8oTLGC543aruw3bhF8gu9Ss_k9SPetrNxrOQuKGPhxMvpOug/exec";
 
 export default function ContactForm({ topic, details }: ContactFormProps) {
   const [formData, setFormData] = useState({
@@ -107,17 +107,7 @@ export default function ContactForm({ topic, details }: ContactFormProps) {
               </span>
             </p>
 
-            {/* Quick contact list */}
-            <div className="space-y-4 pt-6">
-              <div className="flex items-center space-x-3 text-zinc-700">
-                <Mail className="w-4.5 h-4.5 text-[#B48C35]" />
-                <span className="font-mono text-xs md:text-sm font-semibold">press@brainleadsgroup.com</span>
-              </div>
-              <div className="flex items-center space-x-3 text-zinc-700">
-                <Phone className="w-4.5 h-4.5 text-[#B48C35]" />
-                <span className="font-mono text-xs md:text-sm font-semibold">London Offices: +44 20 7946 0192</span>
-              </div>
-            </div>
+
           </div>
 
           {/* Right panel: Live form */}
