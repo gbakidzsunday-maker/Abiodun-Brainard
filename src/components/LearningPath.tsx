@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { Lightbulb, Rocket, Users, TrendingUp, Cpu, Globe, ArrowRight } from "lucide-react";
+import { Lightbulb, Rocket, Users, TrendingUp, Cpu, Globe } from "lucide-react";
 
 interface PathItem {
   id: string;
@@ -103,17 +103,6 @@ export default function LearningPath({ onPathSelect }: LearningPathProps) {
                   <p className="font-sans text-zinc-600 text-xs md:text-sm leading-relaxed font-normal">
                     {path.description}
                   </p>
-                </div>
-
-                {/* Explore Link */}
-                <div className="pt-6 mt-4 border-t border-zinc-100 flex items-center justify-between">
-                  <button
-                    onClick={() => onPathSelect(path.title)}
-                    className="group/btn inline-flex items-center space-x-2 text-xs font-sans font-bold tracking-widest text-[#B48C35] hover:text-[#967128] uppercase transition-colors"
-                  >
-                    <span>Explore This Path</span>
-                    <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
-                  </button>
                 </div>
               </motion.div>
             );

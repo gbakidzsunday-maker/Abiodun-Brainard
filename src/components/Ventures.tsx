@@ -108,13 +108,25 @@ export default function Ventures({ onNavClick }: VenturesProps) {
                 </div>
 
                 {/* Card Button */}
-                <button
-                  id={`learn-btn-${item.id}`}
-                  onClick={() => handleCardClick(item.id)}
-                  className="w-full py-2.5 px-4 font-sans text-xs font-bold tracking-wider uppercase text-white bg-[#B48C35] hover:bg-[#967128] rounded-lg transition-all duration-300 mt-auto shadow-sm hover:shadow cursor-pointer"
-                >
-                  {item.buttonText}
-                </button>
+                {item.id === "tv" ? (
+                  <a
+                    id={`learn-btn-${item.id}`}
+                    href="https://youtube.com/@brainleadsacademy"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 font-sans text-xs font-bold tracking-wider uppercase text-white bg-[#B48C35] hover:bg-[#967128] rounded-lg transition-all duration-300 mt-auto shadow-sm hover:shadow text-center flex items-center justify-center cursor-pointer"
+                  >
+                    {item.buttonText}
+                  </a>
+                ) : (
+                  <button
+                    id={`learn-btn-${item.id}`}
+                    onClick={() => handleCardClick(item.id)}
+                    className="w-full py-2.5 px-4 font-sans text-xs font-bold tracking-wider uppercase text-white bg-[#B48C35] hover:bg-[#967128] rounded-lg transition-all duration-300 mt-auto shadow-sm hover:shadow cursor-pointer"
+                  >
+                    {item.buttonText}
+                  </button>
+                )}
               </motion.div>
             );
           })}

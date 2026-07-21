@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowDown, BookOpen, Target, Users, Play, ArrowRight } from "lucide-react";
-import heroBgImg from "../assets/images/nigerian_hero_1784038962505.jpg";
 
 interface HeroProps {
   onCtaclick: (sectionId: string) => void;
@@ -15,7 +14,7 @@ export default function Hero({ onCtaclick }: HeroProps) {
       {/* Background Image filling and fitting the first section */}
       <div className="absolute inset-0 z-0">
         <img
-          src={heroBgImg}
+          src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/first%20section.png"
           alt="Business education and entrepreneurship training at Brainleads Academy"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"

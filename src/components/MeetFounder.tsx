@@ -27,7 +27,7 @@ export default function MeetFounder({ onReadJourneyClick }: MeetFounderProps) {
               className="relative w-full max-w-[480px] aspect-[4/3] sm:aspect-[1.5/1] lg:aspect-[4/3] rounded-lg overflow-hidden shadow-xl border border-zinc-200/50 group"
             >
               <img
-                src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-20-07-07-25.jpg"
+                src="https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/second%20section.jpg"
                 alt="Abiodun Brainard"
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
