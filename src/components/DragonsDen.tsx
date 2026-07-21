@@ -118,12 +118,91 @@ export default function DragonsDen() {
             <div className="text-white text-[9px] font-semibold tracking-widest leading-none mt-1 uppercase">EXAMINER</div>
           </motion.div>
 
-          {/* & More */}
+          {/* FOX NEWS */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.8 }}
+            className="flex flex-col items-center hover:opacity-100 opacity-80 transition-opacity font-sans"
+          >
+            <span className="text-white text-base font-black tracking-tighter leading-none">FOX</span>
+            <span className="text-white text-[8px] font-bold tracking-[0.2em] leading-none mt-1">NEWS</span>
+          </motion.div>
+
+          {/* CNBC */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.9 }}
+            className="flex items-center hover:opacity-100 opacity-80 transition-opacity font-sans"
+          >
+            <span className="text-white text-base font-black tracking-tight">CNBC</span>
+          </motion.div>
+
+          {/* ENTREPRENEUR */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+            className="hover:opacity-100 opacity-80 transition-opacity font-serif italic text-base font-black tracking-wide text-white"
+          >
+            Entrepreneur
+          </motion.div>
+
+          {/* BUSINESS INSIDER */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.1 }}
+            className="flex items-center space-x-1 hover:opacity-100 opacity-80 transition-opacity font-sans"
+          >
+            <span className="text-white text-xs font-black tracking-tight uppercase">BUSINESS</span>
+            <span className="text-zinc-400 text-xs font-light tracking-tight uppercase">INSIDER</span>
+          </motion.div>
+
+          {/* TRIBUNE */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.2 }}
+            className="hover:opacity-100 opacity-80 transition-opacity font-serif text-sm font-extrabold tracking-widest text-white uppercase"
+          >
+            Tribune
+          </motion.div>
+
+          {/* THISDAY */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.3 }}
+            className="hover:opacity-100 opacity-80 transition-opacity font-serif text-sm font-black tracking-normal text-white uppercase"
+          >
+            THISDAY
+          </motion.div>
+
+          {/* VANGUARD */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.4 }}
+            className="hover:opacity-100 opacity-80 transition-opacity font-serif text-base font-bold tracking-wider text-white"
+          >
+            Vanguard
+          </motion.div>
+
+          {/* & More */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 1.5 }}
             className="text-zinc-400 text-xs font-semibold tracking-wide hover:text-white transition-colors"
           >
             & More

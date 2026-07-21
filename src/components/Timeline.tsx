@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 import { BookOpen, Lightbulb, Compass, Award, Heart, Shield } from "lucide-react";
 
 // Import generated portraits of Abiodun Brainard
-import abiodun1 from "../assets/images/abiodun_portrait_1_1784039310533.jpg";
+const abiodun1 = "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/PHOTO-2026-07-20-07-07-25.jpg";
 import abiodun2 from "../assets/images/abiodun_portrait_2_1784039327745.jpg";
 import abiodun3 from "../assets/images/abiodun_portrait_3_1784039341805.jpg";
 import abiodun4 from "../assets/images/abiodun_portrait_4_1784039356586.jpg";
@@ -32,7 +32,7 @@ export default function Timeline() {
       title: "The Sacrifice and Challenges",
       subtitle: "Seeing the Reality of Growth",
       content: "I saw the early mornings. I saw the long days. I saw the sacrifices. I also saw the challenges that came with trying to grow a business. Although they worked incredibly hard, watching their daily struggle and resilience carved a deep mark on me.",
-      image: abiodun1, // Reuse or alternate
+      image: "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/stage%202.jpg",
       icon: <Shield className="w-5 h-5 text-[#B48C35]" />,
     },
     {
@@ -40,7 +40,7 @@ export default function Timeline() {
       title: "Is There a Better Way?",
       subtitle: "The Burning Spark of Passion",
       content: "I often found myself asking a simple question: 'Is there a better way?' What if they had access to more practical business knowledge? What if they understood modern sales strategies, marketing, branding, customer experience, and business growth? Could they have reached more customers? Could they have grown faster? Those questions stayed with me and became the foundation of my passion for business.",
-      image: abiodun2,
+      image: "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/stage%20%203.jpg",
       icon: <Compass className="w-5 h-5 text-[#B48C35]" />,
     },
     {
@@ -48,7 +48,7 @@ export default function Timeline() {
       title: "Sales is Teaching",
       subtitle: "A Mindset Shift That Changed Everything",
       content: "I dedicated myself to learning everything I could about sales, marketing, entrepreneurship, leadership, and business growth—not simply to build businesses, but to help others avoid unnecessary struggles by sharing practical knowledge. Along the way, I discovered something that completely changed the way I think about business: Sales isn't about convincing people. Sales is teaching. When people truly understand the value of what you offer, they naturally make better decisions.",
-      image: abiodun3,
+      image: "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/stage%204.png",
       icon: <Lightbulb className="w-5 h-5 text-[#B48C35]" />,
     },
     {
@@ -56,7 +56,7 @@ export default function Timeline() {
       title: "The Birth of Brainleads Group",
       subtitle: "Opportunities, Solutions, Impact",
       content: "That philosophy became the foundation of everything we build today. It inspired the creation of Brainleads Group—a company built on the belief that businesses should create opportunities, solve real problems, and improve people's lives. Today, Brainleads Group continues to grow through businesses sharing one common purpose.",
-      image: abiodun3, // Alternate
+      image: "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/stage%205.png",
       icon: <Award className="w-5 h-5 text-[#B48C35]" />,
     },
     {
@@ -64,7 +64,7 @@ export default function Timeline() {
       title: "Sustaining Continuous Growth",
       subtitle: "Our Holding Companies & Dynamic Mission",
       content: "Our goal is simple: to help people become better entrepreneurs, stronger leaders, more confident professionals, and lifelong learners. Through Brainleads Academy (practical business education), Flyrinzo (simplifying marketing via AI), and Sierce Air (ambient scent marketing), we are making a lasting impact. If one book inspires someone to start a business, if one conversation gives someone courage, or if one lesson helps a business grow... then our mission is being fulfilled. This is only the beginning.",
-      image: abiodun4,
+      image: "https://raw.githubusercontent.com/perfectgbakidz/hostingimage/refs/heads/main/stage%206.png",
       icon: <Heart className="w-5 h-5 text-[#B48C35]" />,
     }
   ];
@@ -136,14 +136,14 @@ export default function Timeline() {
                       <div className="grid grid-cols-1 sm:grid-cols-12">
                         
                         {/* Portrait section */}
-                        <div className="sm:col-span-5 relative h-64 sm:h-auto min-h-[220px] overflow-hidden">
+                        <div className="sm:col-span-5 relative h-64 sm:h-auto min-h-[220px] overflow-hidden bg-zinc-100 flex items-center justify-center">
                           <img
                             src={item.image}
                             alt={`Abiodun Brainard - ${item.title}`}
-                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 ease-out scale-100 group-hover:scale-105"
+                            className="w-full h-full object-contain transition-all duration-700 ease-out scale-100 group-hover:scale-105"
                             referrerPolicy="no-referrer"
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent sm:bg-gradient-to-r sm:from-black/10 sm:to-black/30" />
+                          <div className="absolute inset-0 bg-black/5 pointer-events-none" />
                           
                           {/* Floating stage tag on image */}
                           <div className="absolute top-4 left-4 bg-black/80 backdrop-blur-md px-3.5 py-1 rounded-full border border-white/20">

@@ -38,7 +38,7 @@ export default function App() {
 
       if (currentPage !== "home") return;
 
-      const sections = ["hero", "about", "learning-path", "ventures", "books", "dragons-den", "contact"];
+      const sections = ["hero", "meet-founder", "learning-path", "ventures", "books", "dragons-den", "contact"];
       const scrollPosition = window.scrollY + 200;
 
       for (const section of sections) {

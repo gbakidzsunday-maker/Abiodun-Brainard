@@ -45,13 +45,6 @@ const LEARN_DATA: LearnItem[] = [
     description: "Join workshops, masterclasses, networking events and business conferences designed to help you grow.",
     buttonText: "VIEW EVENTS",
     icon: Calendar
-  },
-  {
-    id: "articles",
-    title: "ARTICLES",
-    description: "Practical articles and insights on business, leadership, AI, marketing and more.",
-    buttonText: "READ ARTICLES",
-    icon: FileText
   }
 ];
 

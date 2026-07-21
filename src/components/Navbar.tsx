@@ -20,10 +20,10 @@ export default function Navbar({ onNavClick, activeSection }: NavbarProps) {
   }, []);
 
   const navItems = [
+    { id: "meet-founder", label: "Who We Are" },
     { id: "about", label: "Journey" },
-    { id: "ventures", label: "Learn" },
-    { id: "books", label: "Featured" },
-    { id: "dragons-den", label: "Media" },
+    { id: "learning-path", label: "Learn" },
+    { id: "contact", label: "Contact" },
   ];
 
   return (

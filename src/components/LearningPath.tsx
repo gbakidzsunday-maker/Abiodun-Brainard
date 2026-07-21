@@ -63,16 +63,14 @@ export default function LearningPath({ onPathSelect }: LearningPathProps) {
         {/* Section Header */}
         <div className="text-center space-y-4 mb-16 max-w-3xl mx-auto">
           <span className="font-mono text-xs text-[#B48C35] uppercase tracking-widest font-bold">
-            Tailored Growth
+            WHAT WE TEACH
           </span>
           <h2 id="learning-path-title" className="font-sans text-3xl md:text-4xl font-black text-zinc-950 tracking-tight uppercase">
-            Find Your Learning Path
+            Business Knowledge That Drives Growth
           </h2>
           <div className="w-16 h-1 bg-[#B48C35] mx-auto mt-4 rounded-full" />
           <p className="font-sans text-zinc-600 text-sm md:text-base font-normal leading-relaxed pt-2">
-            No matter where you are in your business journey, Brainleads Academy provides practical
-            knowledge, proven strategies, and real-world insights to help you overcome challenges, grow with
-            confidence, and build lasting success. Choose the path that best describes where you are today.
+            Practical business education, real-world experience, and proven strategies designed to equip aspiring entrepreneurs, business owners, professionals, and business leaders with the knowledge, skills, and confidence to start, grow, scale, and lead successful businesses
           </p>
         </div>
 

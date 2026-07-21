@@ -115,23 +115,27 @@ export default function LawsShowcase() {
               </div>
 
               <div className="pt-4">
-                <button
+                <a
                   id="watch-episode-btn"
-                  onClick={() => setIsEpisodeModalOpen(true)}
-                  className="bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-xs font-bold tracking-widest uppercase py-3.5 px-8 rounded shadow-md hover:shadow-lg transition-all duration-300"
+                  href="https://youtube.com/@brainleadsacademy"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-[#B48C35] hover:bg-[#967128] text-white font-sans text-xs font-bold tracking-widest uppercase py-3.5 px-8 rounded shadow-md hover:shadow-lg transition-all duration-300"
                 >
                   WATCH LATEST EPISODE
-                </button>
+                </a>
               </div>
             </div>
 
             {/* Video Thumbnail column */}
             <div className="xl:col-span-5 flex justify-center xl:justify-end">
-              <motion.div
+              <motion.a
                 whileHover={{ scale: 1.03 }}
                 transition={{ duration: 0.3 }}
-                onClick={() => setIsEpisodeModalOpen(true)}
-                className="cursor-pointer relative aspect-video w-full max-w-[280px] rounded-xl overflow-hidden shadow-xl border border-zinc-900 bg-black group"
+                href="https://youtube.com/@brainleadsacademy"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer relative aspect-video w-full max-w-[280px] rounded-xl overflow-hidden shadow-xl border border-zinc-900 bg-black group block"
               >
                 <img
                   src="/src/assets/images/idea_to_impact_thumb_1784079136243.jpg"
@@ -156,7 +160,7 @@ export default function LawsShowcase() {
                     with Abiodun Brainard
                   </p>
                 </div>
-              </motion.div>
+              </motion.a>
             </div>
           </div>
 

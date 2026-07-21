@@ -108,23 +108,25 @@ export default function Hero({ onCtaclick }: HeroProps) {
             >
               <button
                 id="hero-start-learning-btn"
-                onClick={() => onCtaclick("about")}
+                onClick={() => onCtaclick("learning-path")}
                 className="group w-full sm:w-auto flex items-center justify-center space-x-2.5 bg-[#B48C35] text-white font-sans font-bold tracking-widest text-2xs sm:text-xs uppercase py-3.5 px-7 rounded shadow-md hover:bg-[#967128] transition-all duration-300"
               >
                 <span>START LEARNING</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </button>
 
-              <button
+              <a
                 id="hero-watch-tv-btn"
-                onClick={() => onCtaclick("ventures")}
+                href="https://youtube.com/@brainleadsacademy"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full sm:w-auto flex items-center justify-center space-x-2.5 border border-[#B48C35] text-white font-sans font-bold tracking-widest text-2xs sm:text-xs uppercase py-3.5 px-7 rounded bg-[#B48C35]/5 hover:bg-[#B48C35]/15 transition-all duration-300"
               >
                 <span>WATCH BRAINLEADS TV</span>
                 <div className="w-4 h-4 rounded-full border border-[#B48C35] flex items-center justify-center bg-transparent group-hover:scale-105 transition-transform shrink-0">
                   <Play className="w-1.5 h-1.5 text-[#B48C35] fill-[#B48C35] ml-[1px]" />
                 </div>
-              </button>
+              </a>
             </motion.div>
 
           </div>
